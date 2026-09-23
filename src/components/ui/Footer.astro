@@ -1,15 +1,17 @@
 ---
 import { Image } from "astro:assets";
 import Facebook from "../../assets/facebook.svg";
+import Github from "../../assets/github.svg";
 import Linkedin from "../../assets/linkedin.svg";
 import Logo from "../../assets/logo-alt.svg";
+import SltIcon from "../icons/SltIcon.astro";
 import Twitter from "../../assets/twitter.svg";
 import ShortForm from "../ui/ShortForm.astro";
 
 const logos = [
-  { name: "Facebook", src: Facebook, link: "https://facebook.com" },
+  { name: "YouTube", src: Facebook, link: "https://facebook.com" },
   { name: "Linkedin", src: Linkedin, link: "https://linkedin.com" },
-  { name: "Twitter", src: Twitter, link: "https://twitter.com" },
+  { name: "Github", src: Github, link: "https://github.com" },
 ];
 
 const links = [
@@ -31,8 +33,9 @@ const links = [
           class="flex flex-col lg:flex-row gap-7 items-center justify-between"
         >
           <picture>
-            <a href="#home">
-              <Image src={Logo} alt="Logo for Kreatif Brand" />
+            <a href="#home" class="inline-flex items-center">
+              <SltIcon height="32px" width="32px" dark={true} />
+              <span class="slt-text">Sign Language Tech</span>
             </a>
           </picture>
           <ul class="flex flex-col sm:flex-row gap-5">
@@ -123,3 +126,10 @@ const links = [
     </div>
   </div>
 </section>
+
+<style>
+  .slt-text {
+    padding: 0 10px;
+    font-weight: 600;
+  }
+</style>

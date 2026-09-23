@@ -1,7 +1,6 @@
 ---
 import { Astronav } from "astro-navbar";
-import SltIcon from "../Icons/SltIcon.astro";
-import SocialLinks from "../SocialLinks.astro";
+import SltIcon from "../icons/SltIcon.astro";
 
 const menuitems = [
   { href: '/about', label: 'About us' },
@@ -52,7 +51,6 @@ const menuitems = [
       </Astronav>
 
       <div class="hidden lg:flex items-center gap-4">
-        <SocialLinks />
         <a href="/contact" class="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold">
           Start a project
           <span aria-hidden="true">→</span>

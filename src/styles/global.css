@@ -29,8 +29,11 @@
   }
 
   :root {
+    --color-primary: #000000;
+    --color-secondary: #ffffff;
+    --color-tertiary: #fc784c;
     --green: #b9ff66;
-    --black: rgb(0, 0, 0);
+    --black: #000000;
     --dark: #191a23;
     --gray: #f3f3f3;
     --white: #ffffff;
@@ -42,7 +45,7 @@
       font-family: "Grotesk", sans-serif;
       scroll-behavior: smooth;
     }
-
+§
     body {
       font-size: 20px;
     }

@@ -19,6 +19,7 @@ export default {
       },
       colors: {
         green: "var(--green)",
+        "coral-glow": "var(--coral-glow)",
         black: "var(--black)",
         dark: "var(--dark)",
         gray: "var(--gray)",

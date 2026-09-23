@@ -1,63 +1,123 @@
 ---
-import { Astronav } from "astro-navbar";
 import SltIcon from "../icons/SltIcon.astro";
 
 const menuitems = [
-  { href: '/about', label: 'About us' },
-  { href: '/services', label: 'Services' },
-  { href: '/#cases', label: 'Use Cases' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/articles', label: 'Blog' },
+  { href: '/about', label: 'About', number: '01' },
+  { href: '/services', label: 'Services', number: '02' },
+  { href: '/insights', label: 'Insights', number: '04' },
 ];
 ---
 
 <div class="navbar-spacer">
-  <nav id="site-navbar" class="navbar-wrap fixed top-0 left-0 z-50 w-full px-4 pt-4 md:px-6 lg:px-8">
-    <header id="navbar-shell" class="navbar-shell mx-auto flex max-w-7xl flex-col justify-between gap-4 rounded-[2rem] border border-transparent bg-white/95 px-6 py-4 transition-all duration-300 ease-out lg:flex-row lg:items-center lg:px-8">
-      <Astronav class="w-full">
-        <div class="flex w-full items-center justify-between gap-4 lg:w-auto">
-          <a href="/" class="flex items-center gap-3 rtl:space-x-reverse">
-            <SltIcon height="32px" width="32px" />
-            <span class="slt-text">Sign Language Tech</span>
+  <nav id="site-navbar" class="navbar-wrap fixed top-0 left-0 z-50 w-full px-2.5 pt-2 md:px-6 md:pt-4 lg:px-8">
+    <header id="navbar-shell" class="navbar-shell mx-auto flex max-w-7xl items-center justify-between rounded-full border border-transparent px-4 py-2.5 transition-all duration-300 ease-out md:bg-white/95 md:px-5 md:py-3.5 lg:px-8 lg:py-4">
+      <a href="/" class="flex min-w-0 items-center gap-3 rtl:space-x-reverse" data-close-menu="true">
+        <SltIcon height="32px" width="32px" />
+        <span class="slt-text">Sign Language Tech</span>
+      </a>
+
+      <!-- Desktop navigation links -->
+      <nav class="hidden lg:flex items-center gap-8" aria-label="Main Navigation">
+        {menuitems.map((item) => (
+          <a
+            href={item.href}
+            class="text-base font-medium text-black transition hover:text-black/70"
+          >
+            {item.label}
           </a>
+        ))}
+      </nav>
 
-          <div class="block lg:hidden">
-            <button id="menu-icon" type="button" class="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-black transition hover:bg-black/5" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="menu-items">
-              <svg id="open-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-6 w-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-              <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="hidden h-6 w-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div id="menu-items" class="hidden w-full lg:mt-0 lg:block lg:w-auto">
-          <ul class="mt-4 flex flex-col rounded-3xl border border-black/10 bg-white p-4 text-base font-medium shadow-[0_12px_40px_rgba(0,0,0,0.08)] lg:mt-0 lg:flex-row lg:items-center lg:gap-8 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
-            {menuitems.map((item) => (
-              <li>
-                <a
-                  href={item.href}
-                  class="mobile-nav-link block rounded-full px-3 py-2 text-black transition hover:bg-black hover:text-white lg:px-0 lg:py-0 lg:hover:bg-transparent lg:hover:text-black/70"
-                  data-close-menu="true"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Astronav>
-
+      <!-- Desktop CTA button -->
       <div class="hidden lg:flex items-center gap-4">
         <a href="/contact" class="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold">
-          Start a project
+          contact
           <span aria-hidden="true">→</span>
         </a>
       </div>
+
+      <!-- Mobile Right Control -->
+      <div class="flex shrink-0 items-center lg:hidden">
+        <!-- Menu toggle button -->
+        <button
+          id="menu-icon"
+          type="button"
+          class="mobile-control-button flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white text-black transition hover:bg-black/5 active:scale-95"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <!-- Hamburger icon -->
+          <svg
+            id="open-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-5 w-5"
+          >
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+          <!-- Close X icon -->
+          <svg
+            id="close-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="hidden h-5 w-5"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </header>
   </nav>
+
+  <!-- Mobile Fullscreen Menu Overlay -->
+  <div
+    id="mobile-menu"
+    class="mobile-menu fixed inset-0 z-40 flex flex-col bg-[#F7F7F8] px-[22px] pt-[7.65rem] pb-8 overflow-y-auto lg:hidden"
+    data-lenis-prevent
+    aria-modal="true"
+    role="dialog"
+  >
+    <div class="mx-auto w-full max-w-lg">
+      <!-- Divider above first item -->
+      <div class="border-t border-[#d8d8d3]"></div>
+
+      <!-- Menu items list -->
+      <nav aria-label="Mobile Navigation">
+        <ul class="flex flex-col">
+          {menuitems.map((item) => (
+            <li class="border-b border-[#d8d8d3]">
+              <a
+                href={item.href}
+                class="mobile-nav-link group flex items-center gap-4 py-[1.05rem] transition-colors sm:py-5"
+                data-close-menu="true"
+              >
+                <span class="w-5 shrink-0 text-xs font-extrabold tracking-wider text-black/55 transition-colors group-hover:text-black">
+                  {item.number}
+                </span>
+                <span class="mobile-menu-label text-[2.7rem] font-extrabold tracking-[-0.08em] text-black transition-transform duration-200 group-hover:translate-x-1 leading-[0.98] sm:text-5xl">
+                  {item.label}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
 </div>
 
 <script is:inline>
@@ -66,7 +126,7 @@ const menuitems = [
   const menuIcon = document.getElementById('menu-icon');
   const openIcon = document.getElementById('open-icon');
   const closeIcon = document.getElementById('close-icon');
-  const menuItems = document.getElementById('menu-items');
+  const mobileMenu = document.getElementById('mobile-menu');
   const closeMenuItems = document.querySelectorAll('[data-close-menu="true"]');
 
   const updateNavbarState = () => {
@@ -75,46 +135,57 @@ const menuitems = [
     navbarShell?.classList.toggle('navbar-shell-scrolled', isScrolled);
   };
 
+  const openMobileMenu = () => {
+    mobileMenu?.classList.add('menu-open');
+    openIcon?.classList.add('hidden');
+    closeIcon?.classList.remove('hidden');
+    menuIcon?.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('menu-locked');
+  };
+
   const closeMobileMenu = () => {
-    menuItems?.classList.add('hidden');
+    mobileMenu?.classList.remove('menu-open');
     openIcon?.classList.remove('hidden');
     closeIcon?.classList.add('hidden');
     menuIcon?.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-locked');
   };
 
   menuIcon?.addEventListener('click', () => {
-    menuItems?.classList.toggle('hidden');
-    openIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
-
     const isExpanded = menuIcon.getAttribute('aria-expanded') === 'true';
-    menuIcon.setAttribute('aria-expanded', String(!isExpanded));
+    if (isExpanded) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
   });
 
   closeMenuItems.forEach((item) => {
-    item.addEventListener('click', closeMobileMenu);
+    item.addEventListener('click', () => {
+      closeMobileMenu();
+    });
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !menuItems?.classList.contains('hidden')) {
+    if (event.key === 'Escape' && mobileMenu?.classList.contains('menu-open')) {
       closeMobileMenu();
       menuIcon?.focus();
     }
   });
 
-  window.addEventListener('scroll', updateNavbarState, { passive: true });
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 1024) {
       closeMobileMenu();
     }
   });
 
+  window.addEventListener('scroll', updateNavbarState, { passive: true });
   updateNavbarState();
 </script>
 
 <style>
   .navbar-spacer {
-    min-height: 7rem;
+    min-height: 5.75rem;
   }
 
   .navbar-wrap {
@@ -122,8 +193,8 @@ const menuitems = [
   }
 
   .navbar-shell {
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    backdrop-filter: blur(0px);
+    box-shadow: none;
+    backdrop-filter: blur(12px);
   }
 
   .navbar-scrolled {
@@ -132,20 +203,55 @@ const menuitems = [
 
   .navbar-shell-scrolled {
     max-width: 78rem;
-    border-color: rgba(0, 0, 0, 0.08);
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
+    border-color: rgba(0, 0, 0, 0.12);
+    /* background: rgba(255, 255, 255, 0.95); */
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset, 0 12px 34px rgba(15, 23, 42, 0.12);
     backdrop-filter: blur(18px);
   }
 
   .slt-text {
-    padding: 0 10px;
-    font-weight: 600;
+    padding: 0 6px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+  }
+
+  .mobile-control-button {
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  }
+
+  .mobile-menu {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .mobile-menu.menu-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  :global(body.menu-locked) {
+    overflow: hidden;
   }
 
   @media (max-width: 1023px) {
     .navbar-spacer {
-      min-height: 5.75rem;
+      min-height: 5.35rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .slt-text {
+      max-width: 9.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .mobile-menu-label {
+      font-size: clamp(2.25rem, 11.5vw, 2.7rem);
     }
   }
 </style>

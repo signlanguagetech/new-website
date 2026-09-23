@@ -1,5 +1,6 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import SltIcon from "../sections/SltIcon.astro";
 
 const menuitems = [
   { href: '/about', label: 'About us' },
@@ -18,7 +19,8 @@ const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'R
       <Astronav>
         <div class="flex w-full lg:w-auto items-center justify-between">
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="/Logo.svg" class="h-8" alt="Logo" />
+            <SltIcon height='32px' width='32px' />
+            <span class='slt-text'>Sign Language Tech</span>
           </a>
           <div class="block lg:hidden">
             <div id="menu-icon" class="w-8 h-8 text-black cursor-pointer">
@@ -97,3 +99,9 @@ const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'R
     });
   });
 </script>
+
+<style>
+  .slt-text {
+    padding: 0 10px;
+  }
+</style>

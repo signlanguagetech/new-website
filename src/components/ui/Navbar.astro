@@ -1,6 +1,7 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import SltIcon from "../sections/SltIcon.astro";
+import SltIcon from "../Icons/SltIcon.astro";
+import SocialLinks from "../SocialLinks.astro";
 
 const menuitems = [
   { href: '/about', label: 'About us' },
@@ -49,26 +50,16 @@ const navButton = { href: 'https://github.com/manulthanura/Positivus', label: 'R
                 </a>
               </li>
             ))}
-            <div class="lg:hidden flex items-center justify-center mt-3 gap-4">
-              <a 
-                class="mobile-nav-link px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" 
-                href={navButton.href}
-                data-close-menu="true"
-              >
-                <h2 class="text-center text-xl font-normal leading-7">{navButton.label}</h2>
-              </a>
-            </div>
           </ul>
         </nav>
       </Astronav>
 
       <div>
         <div class="hidden lg:flex items-center gap-4">
-          <a class="px-9 py-5 rounded-2xl border border-zinc-900 bg-white hover:bg-black text-black hover:text-white inline-flex" href={navButton.href}>
-            <h2 class="text-center text-xl font-normal leading-7">{navButton.label}</h2>
-          </a>
+          <SocialLinks />
         </div>
       </div>
+      
     </header>
   </nav>
 </div>

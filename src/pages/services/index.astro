@@ -1,26 +1,26 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import SectionTitle from "../components/ui/SectionTitle.astro";
-import Card from "../components/ui/Card.astro";
-import ServiceCard from "../components/ui/ServiceCard.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import Card from "@/components/ui/Card.astro";
+import ServiceCard from "@/components/ui/ServiceCard.astro";
 import { Image } from "astro:assets";
 
-import c1 from "../assets/pics/card-pic1.png";
-import c2 from "../assets/pics/card-pic2.png";
-import c3 from "../assets/pics/card-pic3.png";
-import c4 from "../assets/pics/card-pic4.png";
-import c5 from "../assets/pics/card-pic5.png";
-import c6 from "../assets/pics/card-pic6.png";
+import c1 from "@/assets/pics/card-pic1.png";
+import c2 from "@/assets/pics/card-pic2.png";
+import c3 from "@/assets/pics/card-pic3.png";
+import c4 from "@/assets/pics/card-pic4.png";
+import c5 from "@/assets/pics/card-pic5.png";
+import c6 from "@/assets/pics/card-pic6.png";
 
 // Definición detallada de cada servicio
 const services = [
   {
     index: 1,
-    titleTop: "Search Engine",
-    titleBottom: "Optimization",
+    titleTop: "Keynotes",
+    titleBottom: "",
     img: c1,
     alt: "SEO",
-    description: "We optimize your website to rank higher in search engine results pages, driving more organic traffic to your site. Our SEO services include keyword research, on-page optimization, technical SEO, and link building strategies.",
+    description: "",
     benefits: ["Increased organic traffic", "Higher website rankings", "Better user experience", "Increased brand visibility"],
     cta: "Get SEO Audit",
     link: "/services/seo",
@@ -46,40 +46,7 @@ const services = [
     benefits: ["Increased brand awareness", "Better customer engagement", "Higher conversion rates", "Audience insights"],
     cta: "Social Media Strategy",
     link: "/services/social-media",
-  },
-  {
-    index: 1,
-    titleTop: "Email",
-    titleBottom: "Marketing",
-    img: c4,
-    alt: "Email Marketing",
-    description: "Our email marketing services help you nurture leads and maintain customer relationships through personalized campaigns. We handle everything from strategy development to design, automation, and performance analysis.",
-    benefits: ["Direct customer communication", "High ROI", "Personalized messaging", "Automated workflows"],
-    cta: "Start Email Campaign",
-    link: "/services/email-marketing",
-  },
-  {
-    index: 2,
-    titleTop: "Content",
-    titleBottom: "Creation",
-    img: c5,
-    alt: "Content Creation",
-    description: "We create high-quality, engaging content that resonates with your target audience and helps achieve your business goals. Our content services include blog posts, articles, ebooks, infographics, videos, and more.",
-    benefits: ["Increased audience engagement", "Improved brand authority", "Better search visibility", "Valuable marketing assets"],
-    cta: "Content Strategy",
-    link: "/services/content",
-  },
-  {
-    index: 3,
-    titleTop: "Analytics and",
-    titleBottom: "Tracking",
-    img: c6,
-    alt: "Analytics",
-    description: "We help you make data-driven decisions by setting up comprehensive tracking systems and providing actionable insights. Our services include setting up analytics tools, custom dashboards, conversion tracking, and regular reporting.",
-    benefits: ["Data-driven decision making", "Performance tracking", "User behavior insights", "ROI measurement"],
-    cta: "Analytics Setup",
-    link: "/services/analytics",
-  },
+  }
 ];
 ---
 
@@ -91,7 +58,7 @@ const services = [
     <div class="text-center mb-16">
       <h1 class="mb-4 text-5xl font-medium leading-none tracking-tight md:text-6xl">Our Services</h1>
       <p class="text-xl font-normal leading-7 mx-auto max-w-3xl">
-        At Positivus, we offer a comprehensive range of digital marketing services designed to help your business thrive in the online world. Explore our services below to find the perfect solution for your needs.
+        At Sign Language Tech, we offer a comprehensive range of digital marketing services designed to help your business thrive in the online world. Explore our services below to find the perfect solution for your needs.
       </p>
     </div>
     

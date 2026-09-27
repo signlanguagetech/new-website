@@ -1,0 +1,46 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  /** Force the reduced-motion static frame regardless of the OS setting — useful for review. */
+  forceStatic?: boolean;
+}
+
+const { id, class: className, forceStatic = false } = Astro.props;
+---
+
+<div id={id} class:list={["pixel-stack-mount", className]} data-pixel-stack-mount data-force-static={forceStatic ? "true" : "false"}>
+  <canvas data-pixel-stack aria-hidden="true"></canvas>
+  <slot />
+</div>
+
+<style>
+  .pixel-stack-mount {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background-color: #f7f7f5;
+  }
+  .pixel-stack-mount canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<script>
+  import { PixelStackAnimation } from "@/scripts/pixel-stack/engine";
+
+  type MountEl = HTMLElement & { __pixelStackInstance?: PixelStackAnimation };
+
+  for (const mount of document.querySelectorAll<MountEl>("[data-pixel-stack-mount]")) {
+    if (mount.__pixelStackInstance) continue;
+    const canvas = mount.querySelector<HTMLCanvasElement>("[data-pixel-stack]");
+    if (!canvas) continue;
+    mount.__pixelStackInstance = new PixelStackAnimation(canvas, {
+      forceStatic: mount.dataset.forceStatic === "true",
+    });
+  }
+</script>

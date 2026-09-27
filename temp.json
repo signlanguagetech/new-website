@@ -1,0 +1,53 @@
+[
+  {
+    index: 1,
+    titleTop: "Inspire new",
+    titleBottom: "possibilities",
+    img: "/images/services/keynotes.webp",
+    alt: "Keynote speaker presenting transformative ideas to a business audience",
+    description:
+      "Engaging keynotes that challenge conventional thinking, make complex ideas accessible, and inspire audiences to take meaningful action.",
+    benefits: [
+      "Fresh perspectives tailored to your audience",
+      "Practical insights people can apply immediately",
+      "Engaging stories that make ideas memorable",
+      "A shared language for change and innovation"
+    ],
+    cta: "Explore keynotes",
+    link: "/services/keynotes"
+  },
+  {
+    index: 2,
+    titleTop: "Turn ideas into",
+    titleBottom: "action",
+    img: "/images/services/workshops.webp",
+    alt: "Team members collaborating during an interactive professional workshop",
+    description:
+      "Interactive workshops that help teams explore challenges, build practical skills, and turn new thinking into clear, actionable outcomes.",
+    benefits: [
+      "Hands-on learning built around real challenges",
+      "Tools and frameworks teams can reuse",
+      "Stronger alignment and collaboration",
+      "Clear actions and next steps"
+    ],
+    cta: "Explore workshops",
+    link: "/services/workshops"
+  },
+  {
+    index: 3,
+    titleTop: "Create lasting",
+    titleBottom: "impact",
+    img: "/images/services/consulting.webp",
+    alt: "Consultant working with business leaders on strategy and organizational change",
+    description:
+      "Focused consulting support that brings clarity to complex challenges and helps leaders translate strategy into measurable, sustainable progress.",
+    benefits: [
+      "Objective guidance tailored to your context",
+      "Clear priorities and practical recommendations",
+      "Support from strategy through execution",
+      "Capability that stays within your organization"
+    ],
+    cta: "Explore consulting",
+    link: "/services/consulting"
+  }
+]

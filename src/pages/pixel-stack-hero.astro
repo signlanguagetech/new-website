@@ -1,0 +1,92 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PixelStackHero from "../components/sections/PixelStackHero.astro";
+---
+
+<MainLayout
+  title="Pixel Stack Hero — Preview"
+  description="Standalone preview of the pixel-rain / Tetris-skyline hero animation concept."
+>
+  <section class="relative h-screen w-full">
+    <PixelStackHero id="pixel-stack-main">
+      <div class="absolute inset-x-0 top-0 z-10 flex flex-col items-center gap-6 px-6 pt-[12vh] text-center sm:pt-[14vh]">
+        <p class="text-xs font-medium uppercase tracking-[0.2em] text-black/50">Hero animation preview</p>
+        <h1 class="max-w-3xl text-4xl font-medium leading-tight text-black md:text-6xl">
+          Scattered lessons,<br />compounding into mastery.
+        </h1>
+        <p class="max-w-xl text-lg leading-7 text-black/70">
+          Expert-led keynotes, workshops, and technical training that turn individual insights
+          into structured engineering excellence.
+        </p>
+        <div class="flex flex-col items-center gap-4 pt-2 sm:flex-row">
+          <a
+            href="#"
+            class="rounded-2xl border bg-zinc-900 px-8 py-5 text-center text-xl font-normal leading-7 text-white hover:bg-white hover:text-black"
+          >
+            Let's Talk
+          </a>
+          <a
+            href="#"
+            class="rounded-2xl border border-black/20 px-8 py-5 text-center text-xl font-normal leading-7 text-black hover:bg-black/5"
+          >
+            See How We Help
+          </a>
+        </div>
+      </div>
+    </PixelStackHero>
+
+    <button
+      id="reduced-motion-toggle"
+      type="button"
+      class="absolute bottom-6 right-6 z-20 rounded-full border border-black/20 bg-white/80 px-4 py-2 text-sm font-medium text-black backdrop-blur"
+    >
+      Preview reduced-motion
+    </button>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <h2 class="mb-2 text-2xl font-medium">Deliverable formats</h2>
+    <p class="mb-8 max-w-2xl text-black/60">
+      One responsive engine adapts to any container, so the same animation covers both target
+      aspect ratios plus the reduced-motion fallback — no separate exports needed.
+    </p>
+    <div class="flex flex-wrap items-start gap-10">
+      <div>
+        <p class="mb-3 text-sm font-medium uppercase tracking-wide text-black/50">1920 × 1080</p>
+        <div class="relative aspect-video w-[480px] overflow-hidden rounded-lg border border-black/10">
+          <PixelStackHero />
+        </div>
+      </div>
+      <div>
+        <p class="mb-3 text-sm font-medium uppercase tracking-wide text-black/50">1080 × 1920</p>
+        <div class="relative aspect-[9/16] w-[270px] overflow-hidden rounded-lg border border-black/10">
+          <PixelStackHero />
+        </div>
+      </div>
+      <div>
+        <p class="mb-3 text-sm font-medium uppercase tracking-wide text-black/50">
+          Reduced-motion fallback (static key frame)
+        </p>
+        <div class="relative aspect-video w-[480px] overflow-hidden rounded-lg border border-black/10">
+          <PixelStackHero forceStatic />
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  import type { PixelStackAnimation } from "@/scripts/pixel-stack/engine";
+
+  type MountEl = HTMLElement & { __pixelStackInstance?: PixelStackAnimation };
+
+  const button = document.getElementById("reduced-motion-toggle");
+  const mount = document.getElementById("pixel-stack-main") as MountEl | null;
+  let forced = false;
+
+  button?.addEventListener("click", () => {
+    forced = !forced;
+    mount?.__pixelStackInstance?.setForceStatic(forced);
+    button.textContent = forced ? "Show live animation" : "Preview reduced-motion";
+  });
+</script>

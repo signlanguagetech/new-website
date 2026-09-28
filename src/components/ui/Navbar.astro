@@ -42,7 +42,7 @@ const menuitems = [
         <button
           id="menu-icon"
           type="button"
-          class="mobile-control-button flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white text-black transition hover:bg-black/5 active:scale-95"
+          class="flex h-12 w-12 items-center justify-center rounded-full text-black transition"
           aria-label="Toggle navigation menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -184,9 +184,6 @@ const menuitems = [
 </script>
 
 <style>
-  .navbar-spacer {
-    /* min-height: 5.75rem; */
-  }
 
   .navbar-wrap {
     transition: padding 0.3s ease;
@@ -216,10 +213,6 @@ const menuitems = [
     white-space: nowrap;
   }
 
-  .mobile-control-button {
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
-  }
-
   .mobile-menu {
     opacity: 0;
     visibility: hidden;
@@ -235,12 +228,6 @@ const menuitems = [
 
   :global(body.menu-locked) {
     overflow: hidden;
-  }
-
-  @media (max-width: 1023px) {
-    .navbar-spacer {
-      min-height: 5.35rem;
-    }
   }
 
   @media (max-width: 420px) {

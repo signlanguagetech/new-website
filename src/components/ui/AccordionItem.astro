@@ -3,9 +3,10 @@ type Props = {
   index: number;
   title: string;
   description: string;
+  link?: string;
 };
 
-const { index, title, description } = Astro.props;
+const { index, title, description, link } = Astro.props;
 ---
 
 <div
@@ -41,6 +42,15 @@ const { index, title, description } = Astro.props;
     <p class="prose mb-4 mt-1 max-w-full pt-5 pb-[60px] transition-[height]">
       {description}
     </p>
+    { link && (
+      <a
+        href={link}
+        class="flex items-center gap-3.5 pb-[60px]"
+        aria-label={`Learn more about ${title}`}
+      >
+        Learn More
+      </a>
+    )}
   </div>
 </div>
 <style>

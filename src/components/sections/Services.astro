@@ -6,30 +6,25 @@ import Section from "./Section.astro";
 import c1 from "../../assets/pics/card-pic1.png";
 import c2 from "../../assets/pics/card-pic2.png";
 import c3 from "../../assets/pics/card-pic3.png";
+import AccordionItem from "../ui/AccordionItem.astro";
 
 const cards = [
   {
     index: 1,
-    titleTop: "Inspire new",
-    titleBottom: "possibilities",
-    img: c1,
-    alt: "Keynote speaker presenting transformative ideas to a business audience",
+    title: "Inspire new",
+    description: "Keynote speaker presenting transformative ideas to a business audience",
     link: "/services/keynotes",
   },
   {
     index: 2,
-    titleTop: "Turn ideas into",
-    titleBottom: "action",
-    img: c2,
-    alt: "Team members collaborating during an interactive professional workshop",
+    title: "Turn ideas into",
+    description: "Team members collaborating during an interactive professional workshop",
     link: "/services/workshops",
   },
   {
     index: 3,
-    titleTop: "Create lasting",
-    titleBottom: "impact",
-    img: c3,
-    alt: "Consultant working with business leaders on strategy and organizational change",
+    title: "Create lasting",
+    description: "Consultant working with business leaders on strategy and organizational change",
     link: "/services/consulting",
   }
 ];
@@ -42,19 +37,14 @@ each engagement is designed around your context and the outcomes you want to ach
 <Section id="services">
   <div class="mt-[140px] mb-5">
     <SectionTitle sectionTitle="Services" description={description} />
-    <div class="grid lg:grid-cols-2 lg:grid-rows-3 gap-10">
-      {
-        cards.map((card) => (
-          <ServiceCard
-            index={card.index}
-            titleTop={card.titleTop}
-            titleBottom={card.titleBottom}
-            img={card.img}
-            alt={card.alt}
-            link={card.link}
-          />
-        ))
-      }
-    </div>
+    {cards.map(card => (
+      <AccordionItem
+        index={card.index}
+        title={card.title}
+        description={card.description}
+        link={card.link}
+      />
+    ))
+    }
   </div>
 </Section>

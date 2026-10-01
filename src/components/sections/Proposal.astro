@@ -1,33 +1,21 @@
 ---
-import { Image } from "astro:assets";
-import Card from "../ui/Card.astro";
-import Section from "./Section.astro";
-
-import propImg from "../../assets/pics/proposal-pic.png";
+import { Image } from 'astro:assets';
+import Card from '../ui/Card.astro';
+import Section from './Section.astro';
 ---
 
 <Section>
   <Card>
-    <div
-      class="flex bg-[#F3F3F3] rounded-[45px] p-[60px] relative mt-[123px] mb-[163px]"
-    >
-      <div class="w-full md:w-[40%] flex flex-col gap-[26px]">
-        <h2 class="text-3xl font-medium">Let's make things happen</h2>
+    <div class="flex bg-[#F3F3F3] rounded-[45px] p-[60px] relative mt-[123px] mb-[163px]">
+      <div class="w-full md:w-[50%] flex flex-col gap-[26px]">
+        <h2 class="text-3xl font-medium">Ready to engineer your next breakthrough?</h2>
         <p>
-          Contact us today to learn more about how our digital marketing
-          services can help your business grow and succeed online.
+          Reach out today to learn how a tailored keynote, workshop, or training program can elevate your engineering
+          culture. Tell us about your goals, and we'll craft a proposal designed around the exact outcomes you want to
+          achieve.
         </p>
-        <button class="btn-primary">Get your free proposal</button>
+        <button class="btn-primary w-fit">Request a custom proposal</button>
       </div>
-      <picture
-        class="hidden md:flex absolute right-[-10%] lg:right-0 top-[-15%] h-[450px] items-center justify-center"
-      >
-        <Image
-          src={propImg}
-          alt="This is an illustration"
-          class="hidden md:flex lg:h-full lg:w-auto"
-        />
-      </picture>
     </div>
   </Card>
 </Section>

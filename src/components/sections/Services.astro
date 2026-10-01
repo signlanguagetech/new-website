@@ -1,37 +1,30 @@
 ---
 import SectionTitle from "../ui/SectionTitle.astro";
-import ServiceCard from "../ui/ServiceCard.astro";
 import Section from "./Section.astro";
-
-import c1 from "../../assets/pics/card-pic1.png";
-import c2 from "../../assets/pics/card-pic2.png";
-import c3 from "../../assets/pics/card-pic3.png";
 import AccordionItem from "../ui/AccordionItem.astro";
 
 const cards = [
   {
     index: 1,
-    title: "Inspire new",
-    description: "Keynote speaker presenting transformative ideas to a business audience",
+    title: "Keynotes",
+    description: "Keynote speaker presenting transformative ideas to a engineering audience",
     link: "/services/keynotes",
   },
   {
     index: 2,
-    title: "Turn ideas into",
+    title: "Workshops",
     description: "Team members collaborating during an interactive professional workshop",
     link: "/services/workshops",
   },
   {
     index: 3,
-    title: "Create lasting",
-    description: "Consultant working with business leaders on strategy and organizational change",
-    link: "/services/consulting",
+    title: "Training",
+    description: "Technical training sessions designed to enhance the skills and knowledge of engineering teams",
+    link: "/services/training",
   }
 ];
 
-const description = `Whether you want to inspire an audience, equip a team, 
-or solve a complex organizational challenge, 
-each engagement is designed around your context and the outcomes you want to achieve.`
+const description = `Great engineering requires more than technical prowess; it demands visionary thinking, seamless collaboration, and continuous mastery. From the spark of a keynote to the synergy of a workshop and the rigor of targeted training, we architect experiences that transform how your teams build the future.`
 ---
 
 <Section id="services">

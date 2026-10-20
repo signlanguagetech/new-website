@@ -3,13 +3,29 @@ import { Image } from "astro:assets";
 import linkd from "../../assets/pics/profile-in.svg";
 import Card from "./Card.astro";
 
-const { pic, name, role, description, link } = Astro.props;
+interface Props {
+  srcClear: ImageMetadata
+  srcPixel: ImageMetadata
+  name: string
+  role: string
+  description: string
+  link: string
+}
+
+
+const { srcClear, srcPixel, name, role, description, link } = Astro.props;
+import Portrait from "./Portrait.astro";
 ---
 
 <Card isUnderline={true}>
   <div class="p-[60px]">
     <div class="flex flex-col sm:flex-row relative">
-      <picture><Image src={pic} alt={name} /></picture>
+      <Portrait
+        srcClear={srcClear}
+        srcPixel={srcPixel}
+        widthStage={200}
+        alt="Milad">
+      </Portrait>
       <div class="flex flex-col justify-end sm:ml-5">
         <h3 class="text-lg font-medium">{name}</h3>
         <p class="text-sm font-normal">{role}</p>

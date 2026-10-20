@@ -6,12 +6,15 @@ import Section from "./Section.astro";
 const description =
   "Meet the skilled and experienced team behind our successful software engineering projects";
 
-import p1 from "../../assets/team/t1.png";
-import p2 from "../../assets/team/t2.png";
+import MiladClear from "../../assets/team/milad-clear.png";
+import MiladPixel from "../../assets/team/milad-pixel.png";
+import AndresClear from "../../assets/team/andres-clear.png";
+import AndresPixel from "../../assets/team/andres-pixel.png";
 
 const team = [
   {
-    pic: p1,
+    srcClear: MiladClear,
+    srcPixel: MiladPixel,
     name: "Milad Vafaeifard",
     role: "CEO & Founder, Software Engineer",
     description:
@@ -19,7 +22,8 @@ const team = [
     link: "https://www.linkedin.com/in/miladvafaeifard/",
   },  
   {
-    pic: p2,
+    srcClear: AndresClear,
+    srcPixel: AndresPixel,
     name: "Andres Garcia",
     role: "Tech Lead & Software Engineer",
     description:
@@ -38,8 +42,8 @@ const team = [
       {
         team.map((member, index) => (
           <TeamCard
-            key={index}
-            pic={member.pic}
+            srcClear={member.srcClear}
+            srcPixel={member.srcPixel}
             name={member.name}
             role={member.role}
             description={member.description}

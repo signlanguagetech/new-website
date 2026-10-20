@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  srcClear: ImageMetadata
+  srcPixel: ImageMetadata
+  widthStage: number
+  alt: string
+  sizes?: string
+  class?: string
+  loading?: 'lazy' | 'eager';
+}
+
+const {
+  srcClear,
+  srcPixel,
+  alt,
+  widthStage = 300,
+  sizes = '(min-width: 768px) 480px, 90vw',
+  loading = 'lazy',
+  class: className
+} = Astro.props;
+
+---
+
+<div class:list={['portrait-stage', className]}>
+  <div class="bg-[#F3F3F3] portrait" aria-hidden="true"></div>
+    <Image
+      class="portrait-cutout is-clear"
+      src={srcClear}
+      alt={alt}
+      width={widthStage}
+      widths={[380, 760, 1140]}
+      sizes={sizes}
+      loading={loading}
+    />
+    <Image
+      class="portrait-cutout is-pixel"
+      src={srcPixel}
+      alt={alt}
+      width={widthStage}
+      widths={[380, 760, 1140]}
+      sizes={sizes}
+      loading={loading}
+      aria-hidden="true"
+    />
+</div>
+
+
+<style>
+
+  .portrait-stage {
+    display: grid;
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .portrait-cutout {
+    grid-area: 1 / 1;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+  }
+
+  .portrait {
+    position: absolute;
+    inset: 30% 1.7% 0.7% 8%;
+    z-index: -1;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-image: radial-gradient(black 0.2px, transparent 0.5px);
+    background-size: 22px 22px;
+    background-position: center;
+    transform: rotate(0deg);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .portrait-stage :global(.portrait-cutout) {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .portrait-stage:hover .portrait {
+    transform: rotate(-1deg);
+  }
+
+  .portrait-stage:hover .portrait-cutout {
+    transform: scale(1.02);
+  }
+
+  .is-clear {
+    opacity: 0;
+  }
+
+  .is-pixel {
+    opacity: 1;
+    filter: blur(2px);
+  }
+
+  .portrait-stage:hover .is-pixel {
+    opacity: 0;
+  }
+
+  .portrait-stage:hover .is-clear {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .portrait {
+      transition: none;
+    }
+  }
+</style>

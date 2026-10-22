@@ -1,0 +1,46 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import ServiceDetail from '@/components/sections/ServiceDetail.astro';
+import img from '@/assets/pics/card-pic3.png';
+---
+
+<MainLayout
+  title="Training | Sign Language Tech"
+  description="Structured technical training programs that build lasting skills in engineering teams, from fundamentals to advanced web development."
+>
+  <ServiceDetail
+    title="Training"
+    intro="Structured technical training programs that build deep, lasting skills. Ideal for onboarding, upskilling, or preparing your team for a new technology."
+    img={img}
+    alt="Engineers taking part in a technical training session"
+    highlights={[
+      {
+        title: 'Structured curriculum',
+        description: 'Modules that progress from fundamentals to advanced topics at a sustainable pace.',
+      },
+      {
+        title: 'Skill assessment',
+        description: 'We start by understanding your team’s level so the program targets real gaps.',
+      },
+      {
+        title: 'Ongoing support',
+        description: 'Follow-up sessions and reference material to reinforce learning over time.',
+      },
+    ]}
+    outcomes={[
+      'Faster onboarding for new developers',
+      'Consistent skill level across the team',
+      'Confidence adopting new frameworks and tools',
+      'Measurable improvement in developer productivity',
+    ]}
+    formats={[
+      'Multi-week training program',
+      'Onboarding bootcamp',
+      'Recurring learning sessions',
+      'Remote or on-site delivery',
+    ]}
+    ctaTitle="Build skills that last"
+    ctaText="Tell us where your team is today and where it needs to be, and we'll put together a training plan."
+    ctaLabel="Request a training plan"
+  />
+</MainLayout>

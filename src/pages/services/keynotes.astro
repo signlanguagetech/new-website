@@ -1,0 +1,46 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import ServiceDetail from '@/components/sections/ServiceDetail.astro';
+import img from '@/assets/pics/card-pic1.png';
+---
+
+<MainLayout
+  title="Keynotes | Sign Language Tech"
+  description="Technical keynotes for conferences, meetups, and internal engineering events on modern web development, software quality, and developer productivity."
+>
+  <ServiceDetail
+    title="Keynotes"
+    intro="Inspiring, technically grounded talks for conferences, meetups, and internal engineering events. We turn real-world engineering experience into ideas your audience can act on the next day."
+    img={img}
+    alt="Speaker delivering a keynote to an engineering audience"
+    highlights={[
+      {
+        title: 'Tailored topics',
+        description: 'Talks adapted to your audience, from modern web architecture and frontend performance to engineering culture.',
+      },
+      {
+        title: 'Live demos',
+        description: 'Practical, code-driven examples that make complex ideas concrete and memorable.',
+      },
+      {
+        title: 'Q&A and follow-up',
+        description: 'Open discussion after the talk plus slides and resources your team can revisit later.',
+      },
+    ]}
+    outcomes={[
+      'Fresh perspectives on modern web engineering',
+      'Clear, actionable takeaways for developers and leads',
+      'Increased team alignment around engineering best practices',
+      'Energy and momentum for your event or internal initiative',
+    ]}
+    formats={[
+      'Conference keynote (30–60 min)',
+      'Meetup or community talk',
+      'Internal tech talk or all-hands session',
+      'Remote or on-site delivery',
+    ]}
+    ctaTitle="Bring an expert voice to your next event"
+    ctaText="Tell us about your audience and goals, and we'll propose a keynote that fits your event."
+    ctaLabel="Book a keynote"
+  />
+</MainLayout>

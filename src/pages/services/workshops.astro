@@ -1,0 +1,46 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import ServiceDetail from '@/components/sections/ServiceDetail.astro';
+import img from '@/assets/pics/card-pic2.png';
+---
+
+<MainLayout
+  title="Workshops | Sign Language Tech"
+  description="Hands-on, interactive workshops that help engineering teams apply modern web development practices to their own codebases."
+>
+  <ServiceDetail
+    title="Workshops"
+    intro="Interactive, hands-on sessions where your team learns by building. Every workshop combines short explanations with guided exercises so new skills stick."
+    img={img}
+    alt="Team members collaborating during an interactive workshop"
+    highlights={[
+      {
+        title: 'Hands-on exercises',
+        description: 'Guided coding labs that move from fundamentals to real-world scenarios.',
+      },
+      {
+        title: 'Your context',
+        description: 'Exercises and examples tailored to your stack, tooling, and current challenges.',
+      },
+      {
+        title: 'Collaborative format',
+        description: 'Pair and group work that builds shared understanding across the team.',
+      },
+    ]}
+    outcomes={[
+      'Practical skills your team can apply immediately',
+      'Shared vocabulary and conventions across the team',
+      'Improved code quality and maintainability',
+      'Workshop materials and exercises to keep practicing',
+    ]}
+    formats={[
+      'Half-day or full-day workshop',
+      'Multi-day intensive',
+      'Conference or event workshop',
+      'Remote or on-site delivery',
+    ]}
+    ctaTitle="Level up your team, hands-on"
+    ctaText="Share your team's stack and goals, and we'll design a workshop around the skills you need most."
+    ctaLabel="Plan a workshop"
+  />
+</MainLayout>

@@ -1,22 +1,17 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
-import SectionTitle from '@/components/ui/SectionTitle.astro';
 import Card from '@/components/ui/Card.astro';
 import ServiceCard from '@/components/ui/ServiceCard.astro';
 import type { ImageMetadata } from 'astro';
-import { Image } from 'astro:assets';
 
 import c1 from '@/assets/pics/card-pic1.png';
 import c2 from '@/assets/pics/card-pic2.png';
 import c3 from '@/assets/pics/card-pic3.png';
-import c4 from '@/assets/pics/card-pic4.png';
-import c5 from '@/assets/pics/card-pic5.png';
-import c6 from '@/assets/pics/card-pic6.png';
 
 type Service = DeepReadonly<{
   index: number;
-  titleTop: string;
-  titleBottom: string;
+  title: string;
+  subtitle: string;
   img: ImageMetadata;
   alt: string;
   description: string;
@@ -28,66 +23,78 @@ type Service = DeepReadonly<{
 const services: readonly Service[] = [
   {
     index: 1,
-    titleTop: 'Keynotes',
-    titleBottom: '',
+    title: 'Keynotes',
+    subtitle: 'Ideas that move engineering teams forward',
     img: c1,
-    alt: '',
-    description: '',
-    benefits: [],
-    cta: '',
+    alt: 'Keynote speaker presenting to an engineering audience',
+    description:
+      'Technically grounded talks for conferences, meetups, and internal events, turning real-world engineering experience into ideas your audience can act on.',
+    benefits: [
+      'Fresh perspectives on modern web engineering',
+      'Actionable takeaways for developers and leads',
+      'Topics tailored to your audience',
+    ],
+    cta: 'Explore keynotes',
     link: '/services/keynotes',
   },
   {
     index: 2,
-    titleTop: 'Workshops',
-    titleBottom: '',
+    title: 'Workshops',
+    subtitle: 'Learn by building, together',
     img: c2,
-    alt: '',
-    description: '',
-    benefits: [''],
-    cta: '',
+    alt: 'Team members collaborating during an interactive workshop',
+    description:
+      'Interactive, hands-on sessions with guided exercises tailored to your stack, so new skills stick and can be applied immediately.',
+    benefits: [
+      'Hands-on exercises based on real scenarios',
+      'Shared conventions across the team',
+      'Improved code quality and maintainability',
+    ],
+    cta: 'Explore workshops',
     link: '/services/workshops',
   },
   {
     index: 3,
-    titleTop: 'Consulting',
-    titleBottom: '',
+    title: 'Training',
+    subtitle: 'Structured programs for lasting skills',
     img: c3,
-    alt: '',
-    description: '',
-    benefits: [''],
-    cta: '',
-    link: '/services/consulting',
+    alt: 'Engineers taking part in a technical training session',
+    description:
+      'Multi-session training programs that take your team from fundamentals to advanced topics, ideal for onboarding and upskilling.',
+    benefits: [
+      'Faster onboarding for new developers',
+      'Consistent skill level across the team',
+      'Confidence adopting new frameworks and tools',
+    ],
+    cta: 'Explore training',
+    link: '/services/training',
   },
 ];
 ---
 
 <MainLayout
-  title="Our Services"
-  description="Explore our comprehensive range of digital marketing services designed to help your business thrive in the online world. From keynotes to workshops and consulting, we provide tailored solutions to meet your unique needs."
+  title="Services | Sign Language Tech"
+  description="Expert-led keynotes, hands-on workshops, and structured technical training that help engineering teams build better web applications."
 >
-  <div class="pt-48 px-4 mx-auto max-w-screen-xl lg:px-6">
+  <div class="pt-48 pb-24 px-4 mx-auto max-w-screen-xl lg:px-6">
     <div class="mb-16">
       <h1 class="mb-4 text-5xl font-medium leading-none tracking-tight md:text-6xl">Our Services</h1>
       <p class="text-xl font-normal leading-7 max-w-3xl">
-        <p class="text-xl font-normal leading-7 max-w-3xl">
-          Helping teams and developers build better web applications through practical workshops, technical keynotes,
-          and software engineering consulting. Whether you're looking to upskill your team, improve your 
-          architecture, or bring expert insights to your event, we provide tailored solutions backed by real-world
-          engineering experience.
-        </p>
+        Helping teams and developers build better web applications through technical keynotes, hands-on workshops,
+        and structured training. Whether you're upskilling your team, onboarding new developers, or bringing expert
+        insights to your event, we provide tailored programs backed by real-world engineering experience.
       </p>
     </div>
 
     <div class="space-y-24">
       {
-        services.map((service, index) => (
-          <div class="service-item">
+        services.map((service) => (
+          <div class="service-item" id={service.title.toLowerCase()}>
             <div class="mb-12">
               <ServiceCard
                 index={service.index}
-                titleTop={service.titleTop}
-                titleBottom={service.titleBottom}
+                title={service.title}
+                description={service.subtitle}
                 img={service.img}
                 alt={service.alt}
                 link={service.link}
@@ -153,8 +160,8 @@ const services: readonly Service[] = [
         <div class="p-10 md:p-16">
           <h2 class="text-3xl md:text-4xl font-medium mb-6">Learn from engineers who build, lead, and innovate</h2>
           <p class="mb-10 text-xl max-w-2xl">
-           We combine deep technical expertise with real-world experience to deliver impactful keynotes, practical workshops,
-           and strategic guidance that help organizations embrace change with confidence.
+            We combine deep technical expertise with real-world experience to deliver impactful keynotes, practical
+            workshops, and structured training that help organizations embrace change with confidence.
           </p>
           <a
             href="/contact"

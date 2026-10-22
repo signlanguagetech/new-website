@@ -1,0 +1,98 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import Card from '@/components/ui/Card.astro';
+
+interface Props {
+  title: string;
+  intro: string;
+  img: ImageMetadata;
+  alt: string;
+  highlights: { title: string; description: string }[];
+  outcomes: string[];
+  formats: string[];
+  ctaTitle: string;
+  ctaText: string;
+  ctaLabel: string;
+}
+
+const { title, intro, img, alt, highlights, outcomes, formats, ctaTitle, ctaText, ctaLabel } = Astro.props;
+---
+
+<div class="pt-48 pb-24 px-4 mx-auto max-w-screen-xl lg:px-6">
+  <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+    <div>
+      <a href="/services" class="inline-flex items-center mb-6 font-medium hover:text-green">&larr; All services</a>
+      <h1 class="mb-6 text-4xl font-medium leading-none tracking-tight md:text-5xl lg:text-6xl">{title}</h1>
+      <p class="mb-8 text-lg font-normal">{intro}</p>
+      <a
+        href="#get-started"
+        class="inline-flex items-center justify-center px-8 py-4 bg-green text-dark rounded-2xl hover:bg-dark hover:text-white transition-all font-medium text-lg"
+      >
+        {ctaLabel}
+      </a>
+    </div>
+    <div class="bg-green rounded-[45px] p-4 md:p-8">
+      <Image src={img} alt={alt} class="w-full h-auto rounded-[35px]" />
+    </div>
+  </div>
+
+  <div class="mb-24">
+    <h2 class="mb-12 text-3xl font-medium text-center">What's included</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        highlights.map((item) => (
+          <Card isUnderline={true}>
+            <div class="p-8">
+              <h3 class="text-xl font-medium mb-4">{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-10 mb-24">
+    <div class="bg-gray rounded-2xl p-8">
+      <h2 class="text-2xl font-medium mb-6">Outcomes for your team</h2>
+      <ul class="space-y-4">
+        {
+          outcomes.map((outcome) => (
+            <li class="flex items-start">
+              <svg class="mr-2 w-5 h-5 mt-1 text-green shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span>{outcome}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="bg-dark text-white rounded-2xl p-8">
+      <h2 class="text-2xl font-medium mb-6">Formats</h2>
+      <ul class="space-y-4">
+        {formats.map((format) => <li class="border-b border-white/20 pb-4 last:border-0">{format}</li>)}
+      </ul>
+    </div>
+  </div>
+
+  <div id="get-started">
+    <Card>
+      <div class="bg-[#F3F3F3] rounded-[45px] p-10 md:p-16">
+        <h2 class="text-3xl md:text-4xl font-medium mb-6">{ctaTitle}</h2>
+        <p class="mb-10 text-xl max-w-2xl">{ctaText}</p>
+        <a
+          href="/contact"
+          class="inline-flex items-center px-10 py-5 bg-dark text-white rounded-2xl hover:bg-green hover:text-dark transition-all font-medium text-xl"
+        >
+          {ctaLabel}
+        </a>
+      </div>
+    </Card>
+  </div>
+</div>

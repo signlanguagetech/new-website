@@ -1,8 +1,8 @@
 ---
-description: Audit a landing page for content friction, trust gaps, and weak calls to action
-agent: Website Content Reviewer
+name: audit-conversion-content
+description: "Audit a landing page for content friction, trust gaps, and weak calls to action"
+disable-model-invocation: true
 ---
-
 Audit this landing page for content friction, trust gaps, and weak calls to action, then prioritize the fixes:
 
 ${input:websiteUrl:Paste the website URL}

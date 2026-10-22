@@ -1,8 +1,8 @@
 ---
+name: review-homepage
 description: Review a homepage for messaging clarity and conversion opportunities
-agent: Website Content Reviewer
+disable-model-invocation: true
 ---
-
 Review this homepage for messaging clarity, audience fit, positioning, and conversion opportunities:
 
 ${input:websiteUrl:Paste the website URL}

@@ -1,8 +1,8 @@
 ---
+name: compare-competitor-copy
 description: Compare website messaging and positioning to find opportunities to differentiate
-agent: Website Content Reviewer
+disable-model-invocation: true
 ---
-
 Compare the messaging and positioning of these websites and identify opportunities to differentiate:
 
 ${input:websiteUrls:Paste the website URLs}

@@ -1,8 +1,8 @@
 ---
+name: check-brand-voice
 description: Review a website's tone and consistency and recommend a clearer brand voice
-agent: Website Content Reviewer
+disable-model-invocation: true
 ---
-
 Review this website's tone and consistency, then recommend a clearer brand voice with example rewrites:
 
 ${input:websiteUrl:Paste the website URL}

@@ -1,8 +1,8 @@
 ---
-description: Review a page's search intent, headings, keyword alignment, and content gaps
-agent: Website Content Reviewer
+name: seo-content-review
+description: "Review a page's search intent, headings, keyword alignment, and content gaps"
+disable-model-invocation: true
 ---
-
 Review this page for search intent, heading structure, keyword alignment, and content gaps:
 
 ${input:websiteUrl:Paste the website URL}

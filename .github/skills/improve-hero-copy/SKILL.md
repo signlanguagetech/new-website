@@ -1,8 +1,8 @@
 ---
-description: Generate stronger headline, subhead, and call-to-action combinations for a website hero
-agent: Website Content Reviewer
+name: improve-hero-copy
+description: "Generate stronger headline, subhead, and call-to-action combinations for a website hero"
+disable-model-invocation: true
 ---
-
 Evaluate the hero section on this website and suggest three stronger headline, subhead, and call-to-action combinations:
 
 ${input:websiteUrl:Paste the website URL}

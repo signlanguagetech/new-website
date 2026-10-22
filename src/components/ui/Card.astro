@@ -1,15 +1,15 @@
 ---
-const { isUnderline } = Astro.props;
+const { isUnderline, isHoverable, class: className } = Astro.props;
 ---
 
-{
-  isUnderline ? (
-    <div class="rounded-[45px] border border-dark shadow-[0px_5px_0px_black]">
-      <slot />
-    </div>
-  ) : (
-    <div class="rounded-[45px]">
-      <slot />
-    </div>
-  )
-}
+<div
+  class:list={[
+    "rounded-[45px]",
+    isUnderline && "border border-dark shadow-[0px_5px_0px_black]",
+    isHoverable &&
+      "border border-dark transition-all duration-200 hover:-translate-y-1 hover:shadow-[0px_5px_0px_black] focus-within:-translate-y-1 focus-within:shadow-[0px_5px_0px_black] motion-reduce:transition-none motion-reduce:hover:translate-y-0",
+    className,
+  ]}
+>
+  <slot />
+</div>

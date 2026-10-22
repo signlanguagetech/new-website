@@ -1,7 +1,7 @@
 ---
 import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
-import AccordionItem from "../ui/AccordionItem.astro";
+import Card from "../ui/Card.astro";
 
 const cards = [
   {
@@ -30,14 +30,23 @@ const description = `Great engineering requires more than technical prowess; it 
 <Section id="services">
   <div class="mt-[140px] mb-5">
     <SectionTitle sectionTitle="Services" description={description} />
-    {cards.map(card => (
-      <AccordionItem
-        index={card.index}
-        title={card.title}
-        description={card.description}
-        link={card.link}
-      />
-    ))
-    }
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+      {cards.map(card => (
+        <li class="flex">
+          <Card isHoverable class="flex flex-col w-full bg-[#F3F3F3] p-8 lg:p-10">
+            <span class="text-5xl lg:text-6xl">0{card.index}</span>
+            <h3 class="mt-6 text-2xl font-medium">{card.title}</h3>
+            <p class="mt-3 mb-8 prose max-w-full">{card.description}</p>
+            <a
+              href={card.link}
+              class="mt-auto underline underline-offset-4"
+              aria-label={`Learn more about ${card.title}`}
+            >
+              Learn More
+            </a>
+          </Card>
+        </li>
+      ))}
+    </ul>
   </div>
 </Section>

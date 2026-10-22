@@ -1,15 +1,153 @@
----
-import Form from "../ui/Form.astro";
-import SectionTitle from "../ui/SectionTitle.astro";
-import Section from "./Section.astro";
----
+<section
+  aria-labelledby="contact-heading"
+  class="relative isolate overflow-hidden px-6 pb-16 pt-[10.5rem] max-[800px]:pt-[9.5rem] max-[560px]:px-[1.1rem] max-[560px]:pb-12 max-[560px]:pt-[8.5rem]"
+>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -z-10 right-[max(-12rem,calc((100vw_-_90rem)_/_2))] top-32 size-[34rem] rounded-full bg-[radial-gradient(circle,rgba(185,255,102,0.34),transparent_68%)]"
+  ></div>
 
-<Section id="contact">
-  <div class="mb-[140px] relative">
-    <SectionTitle
-      sectionTitle="Contact Us"
-      description="Connect with Us: Let's Discuss Your Digital Marketing Needs"
-    />
-    <Form />
+  <div class="mx-auto w-full max-w-6xl">
+    <header
+      class="grid grid-cols-1 items-end gap-7 min-[801px]:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)] min-[801px]:gap-12"
+    >
+      <div>
+        <p
+          class="mb-6 inline-flex items-center gap-[0.65rem] rounded-full border border-[rgba(0,0,0,0.15)] bg-[rgba(255,255,255,0.8)] px-4 py-[0.6rem] text-sm font-medium max-[560px]:mb-5"
+        >
+          <span aria-hidden="true" class="size-[0.55rem] rounded-full bg-black"></span>
+          Here when you need us
+        </p>
+        <h1
+          id="contact-heading"
+          class="m-0 max-w-[13ch] text-[clamp(3.5rem,6.1vw,5.25rem)] font-medium leading-[0.98] tracking-[-0.06em] max-[800px]:max-w-[12ch] max-[800px]:text-[clamp(3.25rem,10vw,5rem)] max-[560px]:text-[clamp(3rem,13vw,4.25rem)]"
+        >
+          Good things start with a conversation.
+        </h1>
+      </div>
+
+      <div class="max-w-[26rem] pb-[0.35rem] max-[800px]:max-w-[34rem]">
+        <p class="m-0 text-[1.2rem] leading-[1.65] text-[rgba(0,0,0,0.68)] max-[560px]:text-[1.05rem]">
+          A workshop, a keynote, a tough engineering question—or just an idea taking shape.
+          We’d love to hear what you’re working on.
+        </p>
+        <a
+          class="mt-7 inline-flex items-center gap-5 rounded-2xl border-2 border-white bg-black px-[1.35rem] py-4 text-base font-medium text-white brutal brutal-interactive transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 motion-reduce:transition-none"
+          href="mailto:team@signlanguagetech.com?subject=Hello%20Sign%20Language%20Tech"
+        >
+          Email our team
+          <svg aria-hidden="true" class="size-[1.15rem]" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M7 17 17 7M7 7h10v10"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <div
+      class="mt-[4.5rem] grid grid-cols-1 gap-4 min-[561px]:grid-cols-2 min-[801px]:grid-cols-3 max-[800px]:mt-14 max-[560px]:mt-11 max-[560px]:gap-[0.8rem]"
+    >
+      <a
+        class="group flex min-h-60 flex-col justify-between gap-8 rounded-3xl border-2 border-white bg-black p-7 text-white no-underline transition-all duration-200 hover:-translate-y-1 hover:shadow-[0px_5px_0px_black] focus-within:-translate-y-1 focus-within:shadow-[0px_5px_0px_black] focus-visible:outline-2 focus-visible:outline-coralGlow focus-visible:outline-offset-[5px] max-[560px]:min-h-52 max-[560px]:p-6 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+        href="mailto:team@signlanguagetech.com"
+      >
+        <div
+          class="flex items-start justify-between gap-4 text-sm font-medium text-white"
+        >
+          <span>The best place to start</span>
+          <span
+            aria-hidden="true"
+            class="text-2xl leading-none transition-transform duration-200 group-hover:translate-x-[3px] group-hover:-translate-y-[3px] motion-reduce:transition-none"
+            >↗</span
+          >
+        </div>
+        <div>
+          <h2 class="mb-2 text-2xl font-medium leading-[1.15] tracking-[-0.035em]">
+            Send us an email
+          </h2>
+          <span
+            class="break-all text-[clamp(1rem,1.5vw,1.2rem)] underline decoration-transparent underline-offset-4 transition-colors duration-200 group-hover:decoration-current motion-reduce:transition-none"
+            >team@signlanguagetech.com</span
+          >
+        </div>
+      </a>
+
+      <div
+        class="flex min-h-60 flex-col justify-between gap-8 rounded-3xl border border-dark bg-[#f5f5f2] p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0px_5px_0px_black] focus-within:-translate-y-1 focus-within:shadow-[0px_5px_0px_black] max-[560px]:min-h-52 max-[560px]:p-6 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+      >
+        <div class="flex items-start justify-between gap-4 text-sm font-medium">
+          <span>A home base in Europe</span>
+          <span class="grid size-10 place-items-center rounded-full bg-black">
+            <svg
+              aria-hidden="true"
+              class="size-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.6"
+            >
+              <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"></path>
+              <circle cx="12" cy="10" r="2.25"></circle>
+            </svg>
+          </span>
+        </div>
+        <div>
+          <h2 class="mb-2 text-2xl font-medium leading-[1.15] tracking-[-0.035em]">
+            Budapest, Hungary
+          </h2>
+          <p class="m-0 max-w-72 text-[0.98rem] leading-[1.55] text-[rgba(0,0,0,0.62)]">
+            Working with engineering teams everywhere.
+          </p>
+        </div>
+      </div>
+
+      <a
+        class="group flex min-h-60 flex-col justify-between gap-8 rounded-3xl border border-dark bg-white p-7 text-black no-underline transition-all duration-200 hover:-translate-y-1 hover:shadow-[0px_5px_0px_black] focus-within:-translate-y-1 focus-within:shadow-[0px_5px_0px_black] focus-visible:outline-2 focus-visible:outline-coralGlow focus-visible:outline-offset-[5px] max-[560px]:min-h-52 max-[560px]:p-6 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+        href="https://www.linkedin.com/company/sign-language-tech/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="flex items-start justify-between gap-4 text-sm font-medium">
+          <span>Follow along</span>
+          <span
+            aria-hidden="true"
+            class="text-2xl leading-none text-black transition-transform duration-200 group-hover:translate-x-[3px] group-hover:-translate-y-[3px] motion-reduce:transition-none"
+            >↗</span
+          >
+        </div>
+        <div>
+          <h2 class="mb-2 text-2xl font-medium leading-[1.15] tracking-[-0.035em]">
+            Find us on LinkedIn
+          </h2>
+          <p class="m-0 max-w-72 text-[0.98rem] leading-[1.55] text-[rgba(0,0,0,0.62)]">
+            Ideas, updates, and a little more about our work.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <div
+      class="mt-8 flex items-center justify-between gap-6 border-t border-[rgba(0,0,0,0.15)] pt-5 text-[0.925rem] text-[rgba(0,0,0,0.62)] max-[560px]:items-start max-[560px]:flex-col max-[560px]:gap-[0.85rem]"
+    >
+      <p class="m-0">Not sure where to begin? Just say hello.</p>
+      <a
+        class="group font-medium text-black underline-offset-4 focus-visible:outline-2 focus-visible:outline-coralGlow focus-visible:outline-offset-[5px]"
+        href="/services"
+      >
+        Explore our services
+        <span
+          aria-hidden="true"
+          class="ml-1 inline-block transition-transform duration-200 group-hover:translate-x-[3px] motion-reduce:transition-none"
+          >→</span
+        >
+      </a>
+    </div>
   </div>
-</Section>
+</section>

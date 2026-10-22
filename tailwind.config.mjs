@@ -38,7 +38,7 @@ export default {
           "--brutal-color": "var(--black)",
           "--brutal-offset": "0px",
           display: "inline-block",
-          border: "2px solid var(--brutal-color)",
+          border: "2px solid var(--brutal-color, white)",
           borderRadius: "1rem",
           padding: "1.25rem 2rem",
           fontSize: "1.25rem",
@@ -56,7 +56,7 @@ export default {
         ".brutal-green": { "--brutal-color": "var(--green)" },
         ".brutal-interactive": {
           transition:
-            "transform 200ms ease-out, box-shadow 200ms ease-out, background-color 200ms ease-out",
+            "transform 200ms ease-out, box-shadow 200ms ease-out, background-color 200ms ease-out, outline-color 200ms ease-out, outline-offset 200ms ease-out",
           "&:hover": {
             transform: "translate(-2px, -2px)",
             boxShadow:

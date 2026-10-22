@@ -23,8 +23,9 @@ const {
 
 ---
 
-<div class:list={['portrait-stage', className]}>
+<div class:list={['portrait-stage', className]} tabindex="0">
   <div class="bg-[#F3F3F3] portrait" aria-hidden="true"></div>
+  <div class="portrait-cutouts">
     <Image
       class="portrait-cutout is-clear"
       src={srcClear}
@@ -44,7 +45,62 @@ const {
       loading={loading}
       aria-hidden="true"
     />
+  </div>
 </div>
+
+<script>
+  import { animate } from "motion";
+
+  const clearPose = [
+    { opacity: 0, filter: "blur(6px)", scale: 1.04 },
+    { opacity: 1, filter: "blur(0px)", scale: 1 },
+  ];
+  const pixelPose = [
+    { opacity: 1, filter: "blur(2px)" },
+    { opacity: 0, filter: "blur(8px)" },
+  ];
+  const fade = { duration: 0.6, ease: "easeOut" } as const;
+  const frameSpring = { type: "spring", stiffness: 260, damping: 20 } as const;
+  const instant = { duration: 0 };
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.querySelectorAll<HTMLElement>(".portrait-stage").forEach((stage) => {
+    const frame = stage.querySelector<HTMLElement>(".portrait")!;
+    const cutouts = stage.querySelector<HTMLElement>(".portrait-cutouts")!;
+    const clear = stage.querySelector<HTMLElement>(".is-clear")!;
+    const pixel = stage.querySelector<HTMLElement>(".is-pixel")!;
+
+    stage.dataset.motion = "";
+    animate(clear, clearPose[0], instant);
+    animate(pixel, pixelPose[0], instant);
+
+    let controls: { stop: () => void }[] = [];
+    let active = false;
+
+    const toggle = (next: boolean) => {
+      if (next === active) return;
+      active = next;
+      controls.forEach((c) => c.stop());
+
+      const i = next ? 1 : 0;
+      const fadeOptions = reduceMotion ? instant : fade;
+      const springOptions = reduceMotion ? instant : frameSpring;
+
+      controls = [
+        animate(clear, clearPose[i], fadeOptions),
+        animate(pixel, pixelPose[i], fadeOptions),
+        animate(frame, { rotate: next ? -1 : 0 }, springOptions),
+        animate(cutouts, { scale: next ? 1.02 : 1 }, springOptions),
+      ];
+    };
+
+    stage.addEventListener("pointerenter", (e) => e.pointerType !== "touch" && toggle(true));
+    stage.addEventListener("pointerleave", (e) => e.pointerType !== "touch" && toggle(false));
+    stage.addEventListener("pointerdown", (e) => e.pointerType === "touch" && toggle(!active));
+    stage.addEventListener("focusin", () => toggle(true));
+    stage.addEventListener("focusout", () => toggle(false));
+  });
+</script>
 
 
 <style>
@@ -57,10 +113,12 @@ const {
     max-width: 480px;
   }
 
+  .portrait-cutouts {
+    display: grid;
+  }
+
   .portrait-cutout {
     grid-area: 1 / 1;
-    transform: scale(1);
-    transition: transform 0.4s ease;
   }
 
   .portrait {
@@ -72,8 +130,6 @@ const {
     background-image: radial-gradient(black 0.2px, transparent 0.5px);
     background-size: 22px 22px;
     background-position: center;
-    transform: rotate(0deg);
-    transition: transform 0.4s ease-in-out;
   }
 
   .portrait-stage :global(.portrait-cutout) {
@@ -85,12 +141,8 @@ const {
     -webkit-user-drag: none;
   }
 
-  .portrait-stage:hover .portrait {
-    transform: rotate(-1deg);
-  }
-
-  .portrait-stage:hover .portrait-cutout {
-    transform: scale(1.02);
+  .portrait-stage {
+    outline: none;
   }
 
   .is-clear {
@@ -102,17 +154,12 @@ const {
     filter: blur(2px);
   }
 
-  .portrait-stage:hover .is-pixel {
+  /* No-JS fallback; Motion drives everything once data-motion is set */
+  .portrait-stage:not([data-motion]):hover .is-pixel {
     opacity: 0;
   }
 
-  .portrait-stage:hover .is-clear {
+  .portrait-stage:not([data-motion]):hover .is-clear {
     opacity: 1;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .portrait {
-      transition: none;
-    }
   }
 </style>

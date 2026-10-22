@@ -12,8 +12,8 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
   id="ProjectSlider"
   class="swiper mt-10"
   style={{
-    "--swiper-pagination-color": "var(--coral-glow)",
-    "--swiper-pagination-bullet-inactive-color": "white",
+    "--swiper-pagination-color": "var(--dark)",
+    "--swiper-pagination-bullet-inactive-color": "red",
     "--swiper-pagination-bullet-inactive-opacity": "1",
     "--swiper-pagination-bullet-size": "19px",
     "--swiper-pagination-bullet-horizontal-gap": "10px",
@@ -45,7 +45,7 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
         >
         <path
-          fill="#ffffff"
+          fill="var(--dark)"
           d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
         ></path></svg
       >
@@ -54,7 +54,7 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
     <div class="swiper-button-next w-7 h-7 sm:w-10 sm:h-10 rotate-180">
       <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 448 512">
         <path
-          fill="#ffffff"
+          fill="var(--dark)"
           d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
         ></path></svg
       >
@@ -105,7 +105,7 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
     background-color: var(--dark);
     color: var(--gray);
     border-radius: 45px;
-    border: 1px solid white;
+    border: 1px solid var(--dark);
   }
   .bubble:after {
     content: "";
@@ -123,7 +123,7 @@ const processedTestimonials = Testimonials.map((item, index, array) => ({
     left: 48px; /* This should be 1px less than the left value of .bubble:after */
     border-width: 20px; /* Adjust this to match the border-width of .bubble:after */
     border-style: solid;
-    border-color: white transparent transparent white;
+    border-color: var(--dark) transparent transparent var(--dark);
   }
   .swiper-wrapper {
     position: relative;

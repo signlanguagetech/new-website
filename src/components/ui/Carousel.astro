@@ -1,0 +1,227 @@
+---
+import Testimonials from "../../data/clientData.json";
+
+const items = Testimonials.map((item, index, array) => ({
+  ...item,
+  index: index + 1,
+  length: array.length,
+}));
+
+const arrowPath =
+  "M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z";
+---
+
+<div
+  class="mt-10"
+  data-carousel
+  role="region"
+  aria-roledescription="carousel"
+  aria-label="Testimonials"
+>
+  <div
+    class="overflow-hidden mt-[84px] mb-[124px] cursor-grab active:cursor-grabbing select-none touch-pan-y"
+    data-viewport
+  >
+    <div class="flex" data-track>
+      {
+        items.map((item) => (
+          <div
+            class="flex flex-col flex-none w-full lg:w-1/2"
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${item.index} / ${item.length}`}
+          >
+            <div class="flex flex-col justify-center items-center py-[48px] px-6 sm:px-[52px]">
+              <p class="bubble">"{item.comment}"</p>
+            </div>
+            <div class="w-full px-10 sm:px-20 text-[var(--dark)]">
+              <div class="font-medium">{item.name}</div>
+              <div>{item.role}</div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class="flex justify-around lg:justify-center items-center mb-[68px] lg:gap-[189px]">
+    <button type="button" class="w-7 h-7 sm:w-10 sm:h-10" aria-label="Previous testimonial" data-prev>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+        <path fill="var(--dark)" d={arrowPath}></path>
+      </svg>
+    </button>
+    <div class="flex flex-col items-center gap-4">
+      <div class="h-1 w-full overflow-hidden rounded-full bg-dark/20 motion-reduce:hidden" aria-hidden="true">
+        <div class="h-full origin-left bg-dark" style="transform: scaleX(0)" data-progress></div>
+      </div>
+      <div class="flex items-center gap-5" data-dots></div>
+    </div>
+    <button
+      type="button"
+      class="w-7 h-7 sm:w-10 sm:h-10 rotate-180"
+      aria-label="Next testimonial"
+      data-next
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+        <path fill="var(--dark)" d={arrowPath}></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  import { animate } from "motion";
+
+  const AUTOPLAY_MS = 3000;
+
+  const root = document.querySelector<HTMLElement>("[data-carousel]");
+
+  if (root) {
+    const track = root.querySelector<HTMLElement>("[data-track]")!;
+    const dotsEl = root.querySelector<HTMLElement>("[data-dots]")!;
+    const bar = root.querySelector<HTMLElement>("[data-progress]")!;
+    const viewport = root.querySelector<HTMLElement>("[data-viewport]")!;
+    const slides = Array.from(track.children) as HTMLElement[];
+    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+    const desktop = matchMedia("(min-width: 1024px)");
+
+    let index = 0;
+    let progress: ReturnType<typeof animate> | undefined;
+    let paused = false;
+    let dots: HTMLButtonElement[] = [];
+
+    const pageCount = () => slides.length - (desktop.matches ? 2 : 1) + 1;
+
+    const render = (instant = false) => {
+      animate(
+        track,
+        { x: -slides[0].offsetWidth * index },
+        { duration: instant || reduceMotion.matches ? 0 : 0.6, ease: "easeInOut" }
+      );
+      dots.forEach((dot, i) => dot.setAttribute("aria-current", String(i === index)));
+    };
+
+    // The progress bar fill drives autoplay: when it completes, advance and refill.
+    const run = () => {
+      progress?.stop();
+      if (reduceMotion.matches) return;
+      progress = animate(
+        bar,
+        { scaleX: [0, 1] },
+        { duration: AUTOPLAY_MS / 1000, ease: "linear", onComplete: () => go(index + 1) }
+      );
+      if (paused) progress.pause();
+    };
+
+    const go = (i: number) => {
+      const count = pageCount();
+      index = (i + count) % count;
+      render();
+      run();
+    };
+
+    const pause = () => {
+      paused = true;
+      progress?.pause();
+      track.setAttribute("aria-live", "polite");
+    };
+
+    const resume = () => {
+      paused = false;
+      progress?.play();
+      track.setAttribute("aria-live", reduceMotion.matches ? "polite" : "off");
+    };
+
+    const buildDots = () => {
+      dotsEl.replaceChildren();
+      dots = Array.from({ length: pageCount() }, (_, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className =
+          "h-[19px] w-[19px] rounded-full border border-dark transition-colors aria-[current=true]:bg-dark";
+        dot.setAttribute("aria-label", `Go to testimonial ${i + 1}`);
+        dot.addEventListener("click", () => go(i));
+        dotsEl.append(dot);
+        return dot;
+      });
+    };
+
+    const layout = () => {
+      index = Math.min(index, pageCount() - 1);
+      buildDots();
+      render(true);
+      run();
+    };
+
+    root.querySelector("[data-prev]")!.addEventListener("click", () => go(index - 1));
+    root.querySelector("[data-next]")!.addEventListener("click", () => go(index + 1));
+
+    root.addEventListener("pointerenter", pause);
+    root.addEventListener("pointerleave", resume);
+    root.addEventListener("focusin", pause);
+    root.addEventListener("focusout", resume);
+    document.addEventListener("visibilitychange", () => (document.hidden ? pause() : resume()));
+
+    desktop.addEventListener("change", layout);
+    window.addEventListener("resize", () => render(true));
+
+    let dragging = false;
+    let dragStartX = 0;
+    let dragDelta = 0;
+
+    viewport.addEventListener("pointerdown", (e) => {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      dragging = true;
+      dragStartX = e.clientX;
+      dragDelta = 0;
+      viewport.setPointerCapture(e.pointerId);
+    });
+
+    viewport.addEventListener("pointermove", (e) => {
+      if (!dragging) return;
+      dragDelta = e.clientX - dragStartX;
+      animate(track, { x: -slides[0].offsetWidth * index + dragDelta }, { duration: 0 });
+    });
+
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      if (Math.abs(dragDelta) > slides[0].offsetWidth * 0.15) go(index + (dragDelta < 0 ? 1 : -1));
+      else render();
+    };
+
+    viewport.addEventListener("pointerup", endDrag);
+    viewport.addEventListener("pointercancel", endDrag);
+
+    layout();
+    resume();
+  }
+</script>
+
+<style>
+  .bubble {
+    position: relative;
+    padding: 8%;
+    background-color: var(--dark);
+    color: var(--gray);
+    border-radius: 45px;
+    border: 1px solid var(--dark);
+  }
+  .bubble:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50px;
+    border-width: 22px;
+    border-style: solid;
+    border-color: var(--dark) transparent transparent var(--dark);
+  }
+  .bubble:before {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 48px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: var(--dark) transparent transparent var(--dark);
+  }
+</style>

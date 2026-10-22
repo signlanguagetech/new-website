@@ -1,15 +1,73 @@
 ---
-const { isUnderline, isHoverable, class: className } = Astro.props;
+const { isUnderline, isHoverable, isGlow, class: className } = Astro.props;
 ---
 
 <div
+  data-glow-card={isGlow ? "" : undefined}
   class:list={[
     "rounded-[45px]",
+    isGlow && "glow-card relative isolate",
     isUnderline && "border border-dark shadow-[0px_5px_0px_black]",
     isHoverable &&
       "border border-dark transition-all duration-200 hover:-translate-y-1 hover:shadow-[0px_5px_0px_black] focus-within:-translate-y-1 focus-within:shadow-[0px_5px_0px_black] motion-reduce:transition-none motion-reduce:hover:translate-y-0",
     className,
   ]}
 >
+  {isGlow && <span aria-hidden="true" class="glow-card__aura"></span>}
   <slot />
 </div>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-glow-card]").forEach((card) => {
+    card.addEventListener("pointermove", (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--glow-x", `${e.clientX - rect.left}px`);
+      card.style.setProperty("--glow-y", `${e.clientY - rect.top}px`);
+    });
+  });
+</script>
+
+<style>
+  .glow-card__aura {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    background:
+      radial-gradient(
+        280px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+        rgb(255 255 255 / 0.35),
+        transparent 70%
+      ),
+      radial-gradient(
+        420px circle at calc(var(--glow-x, 50%) - 60px) calc(var(--glow-y, 50%) + 40px),
+        rgb(236 72 153 / 0.18),
+        transparent 70%
+      ),
+      radial-gradient(
+        460px circle at calc(var(--glow-x, 50%) + 70px) calc(var(--glow-y, 50%) - 50px),
+        rgb(56 189 248 / 0.18),
+        transparent 70%
+      ),
+      radial-gradient(
+        520px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+        rgb(250 204 21 / 0.12),
+        transparent 75%
+      );
+    filter: blur(24px);
+  }
+
+  .glow-card:hover > .glow-card__aura,
+  .glow-card:focus-within > .glow-card__aura {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glow-card__aura {
+      transition: none;
+    }
+  }
+</style>

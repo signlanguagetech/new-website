@@ -2,14 +2,7 @@
 import { Image } from "astro:assets";
 import Card from "./Card.astro";
 
-import gob from "../../assets/icon6.svg";
-import wob from "../../assets/icon7.svg";
-
-/* 
-1. Gray card with green title and green on black icon 
-2. Green card with gray title and green on black icon
-3. Black card with gray title and gray on black icon
-*/
+import gob from "../../assets/icon8.svg";
 
 const { index, title, description, img, alt, link } = Astro.props;
 ---
@@ -26,7 +19,7 @@ const { index, title, description, img, alt, link } = Astro.props;
         >{description}</span
       >
     </h3>
-    <div class="flex">
+    <div class="flex lg:justify-end">
       <a href={link} class="flex items-center gap-3.5"
         ><Image src={gob} alt={alt} />
         <span>Service Info</span></a

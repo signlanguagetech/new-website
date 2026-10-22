@@ -89,7 +89,7 @@ const services: readonly Service[] = [
     <div class="space-y-24">
       {
         services.map((service) => (
-          <div class="service-item" id={service.title.toLowerCase()}>
+          <div class="service-item py-16 -mx-4 px-4 border border-black rounded-2xl" id={service.title.toLowerCase()}>
             <div class="mb-12">
               <ServiceCard
                 index={service.index}
@@ -107,7 +107,7 @@ const services: readonly Service[] = [
                 <p class="mb-6">{service.description}</p>
                 <a
                   href={service.link}
-                  class="inline-flex items-center px-8 py-4 bg-green text-dark rounded-2xl hover:bg-dark hover:text-white transition-all font-medium"
+                  class="inline-flex items-center px-8 py-4 brutal brutal-interactive rounded-2xl font-medium"
                 >
                   {service.cta}
                   <svg
@@ -177,9 +177,14 @@ const services: readonly Service[] = [
 
 <style>
   .service-item:nth-child(even) {
-    @apply bg-gray bg-opacity-20 py-16 -mx-4 px-4;
+    @apply bg-gray bg-opacity-20;
   }
 
+  @media (max-width: 1300px) {
+    .service-item:nth-child(even) {
+      @apply rounded-none;
+    }
+  }
   @media (min-width: 768px) {
     .service-item:nth-child(even) {
       @apply -mx-6 px-6;

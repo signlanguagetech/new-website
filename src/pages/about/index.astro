@@ -1,6 +1,8 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import Services from "@/components/sections/Services.astro";
+import Team from "@/components/sections/Team.astro";
+import Proposal from "@/components/sections/Proposal.astro";
 ---
 
 <MainLayout title="About us">
@@ -8,14 +10,15 @@ import Services from "@/components/sections/Services.astro";
         <div class="relative flex flex-col-reverse items-center md:flex-row" id="hero">
             <div class="row items-center md:pb-20">
                 <div class="space-y-10">
-                    <h2 class="text-5xl font-medium leading-none md:text-6xl">We Navigate the digital landscape for success</h2>
-                    <p class="mt-6 mb-8  text-xl font-normal leading-7 sm:mb-12">Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.</p>
-                    <a class="px-9 py-5 bg-zinc-900 hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex" rel="noopener noreferrer"  href="https://github.com/manulthanura/Positivus" target="_blank">
-                        <h2 class="text-center text-xl font-normal leading-7">Book a consultation</h2>
+                    <h2 class="text-5xl font-medium leading-none md:text-6xl">Helping engineering teams build better web applications</h2>
+                    <p class="mt-6 mb-8  text-xl font-normal leading-7 sm:mb-12">We share practical engineering experience through technical keynotes, hands-on workshops, and structured training—helping developers and teams strengthen their skills and build with confidence.</p>
+                    <a class="brutal brutal-interactive border-2 border-white inline-flex items-center justify-center gap-3 bg-black font-medium text-white" href="/contact">
+                        Talk with our team
                     </a>
                 </div>
             </div>
         </div>
     </div>
+    <Team />
     <Services />
 </MainLayout>

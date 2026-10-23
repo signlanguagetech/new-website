@@ -107,11 +107,11 @@ const services: readonly Service[] = [
                 <p class="mb-6">{service.description}</p>
                 <a
                   href={service.link}
-                  class="inline-flex items-center px-8 py-4 brutal brutal-interactive rounded-2xl font-medium"
+                  class="group inline-flex items-center px-8 py-4 brutal brutal-interactive rounded-2xl font-medium"
                 >
                   {service.cta}
                   <svg
-                    class="ml-2 w-5 h-5"
+                    class="ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1 group-focus-visible:translate-x-1 motion-reduce:transition-none"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -165,7 +165,7 @@ const services: readonly Service[] = [
           </p>
           <a
             href="/contact"
-            class="inline-flex items-center px-10 py-5 bg-dark text-white rounded-2xl hover:bg-green hover:text-dark transition-all font-medium text-xl"
+            class="inline-flex items-center px-10 py-5 text-white bg-black border border-white brutal brutal-interactive rounded-2xl font-medium text-xl"
           >
             Explore how we can help
           </a>

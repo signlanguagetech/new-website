@@ -1,0 +1,68 @@
+---
+import { getEntry } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Tags from "../../components/ui/Tags.astro";
+import { formatDate } from "../../utils";
+
+const { slug } = Astro.params;
+const post = slug ? await getEntry("blog", slug) : undefined;
+const Content = post ? (await post.render()).Content : undefined;
+
+if (!post) {
+  Astro.response.status = 404;
+}
+---
+
+<MainLayout title={post ? `${post.data.title} - Sign Language Tech Blog` : "Post not found - Sign Language Tech Blog"}>
+  <main class="mb-40 pt-24">
+    {post && Content ? (
+      <article class="mx-auto max-w-screen-xl px-4 py-8 lg:px-3 lg:py-16">
+        <a
+          href="/blog"
+          class="my-4 inline-flex items-center font-medium text-black hover:text-green"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="h-6 w-6"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 16l-4-4m0 0l4-4m-4 4h18"
+            />
+          </svg>
+          <span class="ml-1 text-lg font-bold">All posts</span>
+        </a>
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900">
+          {post.data.title}
+        </h1>
+        <p class="mb-4 text-lg">
+          By {post.data.author} on {formatDate(post.data.pubDate)}
+        </p>
+        <Tags tags={post.data.tags} />
+        <img
+          src={`/blog/${post.data.image}`}
+          alt={post.data.title}
+          class="my-6 h-auto w-full rounded-xl"
+        />
+        <div class="content">
+          <Content />
+        </div>
+      </article>
+    ) : (
+      <section class="mx-auto max-w-screen-xl px-4 py-8 lg:px-3 lg:py-16">
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900">
+          Post not found
+        </h1>
+        <a href="/blog" class="font-medium text-black hover:text-green">
+          Back to all posts
+        </a>
+      </section>
+    )}
+  </main>
+</MainLayout>

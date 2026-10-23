@@ -34,7 +34,10 @@ const links = [
               links.map((link) => {
                 return (
                   <li class="text-center">
-                    <a class="underline" href={link.href}>
+                    <a
+                      class="relative py-[0.55rem] text-base font-medium text-white transition-transform duration-200 hover:-translate-y-0.5 focus-visible:-translate-y-0.5 after:absolute after:bottom-[0.2rem] after:left-0 after:right-0 after:h-0.5 after:origin-left after:scale-x-0 after:bg-white after:content-[''] after:transition-transform after:duration-300 hover:after:scale-x-100 focus-visible:after:scale-x-100 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[5px] motion-reduce:transition-none motion-reduce:after:transition-none"
+                      href={link.href}
+                    >
                       {link.name}
                     </a>
                   </li>

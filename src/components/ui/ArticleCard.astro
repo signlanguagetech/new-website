@@ -23,13 +23,7 @@ interface Props {
   </div>
   <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{article.data.title}</h2>
   <p class="mb-5 font-light text-gray-500" style="white-space: pre-line">{article.data.summary}</p>
-  <div class="mt-auto flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <img class="w-7 h-7 rounded-full" src={article.data.authImage} alt={article.data.author + " cover"} />
-        <span class="font-medium">
-            {article.data.author}
-        </span>
-      </div>
+  <div class="mt-auto flex justify-end items-center">
       <a href={`${hrefBase}/${article.slug}`} class="group inline-flex items-center font-medium text-black">
           Read more
           <svg

@@ -22,18 +22,35 @@ const { title, intro, img, alt, highlights, outcomes, formats, ctaTitle, ctaText
 <div class="pt-48 pb-24 px-4 mx-auto max-w-screen-xl lg:px-6">
   <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
     <div>
-      <a href="/services" class="inline-flex items-center mb-6 font-medium hover:text-green">&larr; All services</a>
+      <a href="/services" class="group inline-flex items-center mb-6 font-medium">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="h-6 w-6 transition-transform duration-200 group-hover:-translate-x-1 motion-reduce:transition-none"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 16l-4-4m0 0l4-4m-4 4h18"
+          />
+        </svg>
+        <span class="ml-1">All services</span>
+      </a>
       <h1 class="mb-6 text-4xl font-medium leading-none tracking-tight md:text-5xl lg:text-6xl">{title}</h1>
       <p class="mb-8 text-lg font-normal">{intro}</p>
       <a
-        href="#get-started"
-        class="inline-flex items-center justify-center px-8 py-4 bg-green text-dark rounded-2xl hover:bg-dark hover:text-white transition-all font-medium text-lg"
+        href="/contact"
+        class="inline-flex items-center justify-center px-8 py-4 brutal brutal-interactive rounded-2xl font-medium text-lg"
       >
         {ctaLabel}
       </a>
     </div>
-    <div class="bg-green rounded-[45px] p-4 md:p-8">
-      <Image src={img} alt={alt} class="w-full h-auto rounded-[35px]" />
+    <div>
+      <Image src={img} alt={alt} class="w-full h-auto rounded-[35px] border-2 border-black" />
     </div>
   </div>
 
@@ -41,8 +58,8 @@ const { title, intro, img, alt, highlights, outcomes, formats, ctaTitle, ctaText
     <h2 class="mb-12 text-3xl font-medium text-center">What's included</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
-        highlights.map((item) => (
-          <Card isUnderline={true}>
+        highlights.map((item, index) => (
+          <Card isUnderline={index === 0} isHoverable={index !== 0} isGlow key={index}>
             <div class="p-8">
               <h3 class="text-xl font-medium mb-4">{item.title}</h3>
               <p>{item.description}</p>
@@ -88,7 +105,7 @@ const { title, intro, img, alt, highlights, outcomes, formats, ctaTitle, ctaText
         <p class="mb-10 text-xl max-w-2xl">{ctaText}</p>
         <a
           href="/contact"
-          class="inline-flex items-center px-10 py-5 bg-dark text-white rounded-2xl hover:bg-green hover:text-dark transition-all font-medium text-xl"
+          class="inline-flex items-center px-10 py-5 bg-black border border-white text-white brutal brutal-interactive rounded-2xl font-medium text-xl"
         >
           {ctaLabel}
         </a>

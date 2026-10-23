@@ -2,7 +2,7 @@
 title: 'Schema Decoding Approaching Steps with Effect TS'
 pubDate: 2024-04-28
 author: "Milad Vafaeifard"
-authImage: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+authImage: "/blog/slt-milad-profile-light.webp"
 image: 'Schema-Decoding-Approaching-Steps-with-Effect-TS.webp'
 tags: ["Effect", "TypeScript"]
 summary: "While practicing, I can't believe what I did this way that my productivity was automatic to getting approaches better and better. More steps could be there I absolutely will dive deep. Stay tuned."

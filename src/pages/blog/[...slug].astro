@@ -7,6 +7,11 @@ import { formatDate } from "../../utils";
 const { slug } = Astro.params;
 const post = slug ? await getEntry("blog", slug) : undefined;
 const Content = post ? (await post.render()).Content : undefined;
+const image = post
+  ? post.data.image.startsWith("https://")
+    ? post.data.image
+    : `/blog/${post.data.image}`
+  : undefined;
 
 if (!post) {
   Astro.response.status = 404;
@@ -46,7 +51,7 @@ if (!post) {
         </p>
         <Tags tags={post.data.tags} />
         <img
-          src={`/blog/${post.data.image}`}
+          src={image}
           alt={post.data.title}
           class="my-6 h-auto w-full rounded-xl"
         />

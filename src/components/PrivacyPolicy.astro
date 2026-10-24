@@ -10,50 +10,51 @@ const sections = [
 ];
 ---
 
-<div class="policy-page">
-  <header class="policy-hero">
-    <div class="hero-copy">
-      <a class="breadcrumb" href="/" aria-label="Back to Sign Language Tech home">
-        <span aria-hidden="true">←</span> Sign Language Tech
-      </a>
-      <p class="eyebrow"><span></span> Your privacy matters</p>
-      <h1>Privacy<br /><span>Policy</span></h1>
-      <p class="hero-summary">
+<div class="bg-[#f7f7f4] px-[max(1.25rem,calc((100vw_-_1240px)/2))] pt-[12rem] text-[#122349] max-[760px]:px-5 max-[760px]:pt-14 max-[760px]:pb-20 [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-[#fc784c] [&_a:focus-visible]:outline-offset-4">
+  <header class="mx-auto flex max-w-[1240px] items-end justify-between gap-12 pb-[4.5rem] max-[760px]:items-start max-[760px]:flex-col max-[760px]:gap-8 max-[760px]:pb-12">
+    <div class="max-w-[720px]">
+      <p class="m-0 flex items-center gap-[0.6rem] text-[0.76rem] font-medium uppercase tracking-[0.1em] text-[#687284]">
+        <span class="h-[0.55rem] w-[0.55rem] rounded-full bg-black"></span> Your privacy matters
+      </p>
+      <h1 class="mt-[1.2rem] mb-5 text-[clamp(4rem,9vw,7.5rem)] font-medium leading-[0.9] tracking-[-0.085em] max-[760px]:text-[clamp(4rem,17vw,6.5rem)]">
+        Privacy<br /><span class="text-white [-webkit-text-stroke:2px_black]">Policy</span>
+      </h1>
+      <p class="m-0 max-w-[460px] text-[1.15rem] leading-[1.65] text-[#687284]">
         A straightforward guide to the information we collect, how we use it,
         and the choices available to you.
       </p>
     </div>
-    <aside class="policy-note" aria-label="Policy summary">
-      <span class="note-icon" aria-hidden="true">↗</span>
-      <p>Clear information.<br />No surprises.</p>
-      <span class="last-updated">Last updated <time datetime="2024-08-19">19 Aug 2024</time></span>
+    <aside class="flex min-h-[205px] flex-none flex-col items-start justify-between rounded-[0.8rem] bg-black text-white p-[1.35rem] max-[760px]:grid max-[760px]:basis-auto max-[760px]:min-h-0 max-[760px]:w-full max-[760px]:grid-cols-[1fr_auto] max-[760px]:gap-[0.9rem]" aria-label="Policy summary">
+      <span class="self-end text-2xl max-[760px]:col-start-2 max-[760px]:row-span-2 max-[760px]:row-start-1" aria-hidden="true">↗</span>
+      <p class="m-0 text-[1.35rem] font-medium leading-[1.25]">Clear information.<br />No surprises.</p>
+      <span class="text-[0.78rem] max-[760px]:col-start-1">Last updated <time class="mt-1 block font-medium" datetime="2024-08-19">19 Aug 2024</time></span>
     </aside>
   </header>
 
-  <div class="policy-layout">
-    <nav class="contents" aria-label="On this page">
-      <p class="contents-label">On this page</p>
-      <ol>
+  <div class="mx-auto grid max-w-[1240px] grid-cols-[235px_minmax(0,1fr)] items-start gap-[clamp(2.5rem,7vw,7rem)] border-t border-[#dedfd9] pt-14 max-[760px]:grid-cols-1 max-[760px]:gap-10 max-[760px]:pt-8">
+    <nav class="sticky top-48 py-2 max-[760px]:static max-[760px]:rounded-[0.7rem] max-[760px]:border max-[760px]:border-[#dedfd9] max-[760px]:bg-white max-[760px]:p-[1.2rem]" aria-label="On this page">
+      <p class="mb-[1.2rem] text-[0.76rem] font-medium uppercase tracking-[0.1em] text-[#687284]">On this page</p>
+      <ol class="m-0 grid list-none gap-[0.15rem] p-0 max-[760px]:grid-cols-2 max-[760px]:gap-x-4 max-[480px]:grid-cols-1">
         {
           sections.map((section, index) => (
             <li>
-              <a href={`#${section.id}`}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+              <a class="grid grid-cols-[1.7rem_1fr] gap-2 py-[0.55rem] text-[0.87rem] leading-[1.4] text-[#586274] no-underline transition-colors duration-[160ms] hover:text-[#122349] focus-visible:text-[#122349] motion-reduce:transition-none" href={`#${section.id}`}>
+                <span class="text-[0.72rem] tabular-nums text-[#9ba1aa]">{String(index + 1).padStart(2, "0")}</span>
                 {section.title}
               </a>
             </li>
           ))
         }
       </ol>
-      <a class="contents-contact" href="mailto:team@signlanguagetech.com">
+      <a class="mt-6 flex items-center justify-between border-t border-[#dedfd9] pt-4 text-[0.83rem] text-[#122349] no-underline max-[760px]:mt-3" href="mailto:team@signlanguagetech.com">
         Have a question? <span aria-hidden="true">↗</span>
       </a>
     </nav>
 
-    <article class="policy-content">
-      <div class="intro">
-        <span class="intro-mark" aria-hidden="true">i</span>
-        <p>
+    <article class="min-w-0 max-w-[780px] text-base leading-[1.8] text-[#586274] [&_a:not(.contact-link)]:text-[#122349] [&_a:not(.contact-link)]:decoration-[#fc784c] [&_a:not(.contact-link)]:[text-underline-offset:0.2em] [&_strong]:font-medium [&_strong]:text-[#122349]">
+      <div class="mb-14 grid grid-cols-[2rem_1fr] gap-4 rounded-[0.7rem] bg-white p-[1.4rem] max-[480px]:grid-cols-1 max-[480px]:gap-3 max-[480px]:p-[1.2rem]">
+        <span class="grid h-8 w-8 place-items-center rounded-full bg-[#b9ff66] text-[0.95rem] font-medium" aria-hidden="true">i</span>
+        <p class="m-0 mb-4">
           This Privacy Policy outlines how Sign Language Tech ("we", "our", or "us")
           collects, uses, and protects your information when you visit and interact
           with our website <a href="https://signlanguagetech.com">signlanguagetech.com</a>
@@ -63,13 +64,13 @@ const sections = [
         </p>
       </div>
 
-      <section id="information-we-collect">
-        <h2><span>01</span> Information We Collect</h2>
-        <p>
+      <section class="mb-[3.25rem] scroll-mt-8" id="information-we-collect">
+        <h2 class="mt-0 mb-4 flex items-baseline gap-[0.8rem] text-[clamp(1.3rem,2.5vw,1.7rem)] font-medium leading-[1.25] tracking-[-0.035em] text-[#122349]"><span class="text-[0.78rem] tabular-nums tracking-normal text-[#fc784c]">01</span> Information We Collect</h2>
+        <p class="m-0 mb-4">
           When you use our Website, we may collect certain information automatically
           through the use of cookies and similar technologies. This includes:
         </p>
-        <ul>
+        <ul class="mt-[1.2rem] mb-0 grid gap-[0.85rem] py-0 pl-[1.2rem] [&_li]:pl-[0.35rem] [&_li]:marker:text-[#fc784c]">
           <li>
             <strong>Google Analytics:</strong> We use Google Analytics to track and analyze
             how visitors use our Website. Google Analytics may collect information about
@@ -86,13 +87,13 @@ const sections = [
         </ul>
       </section>
 
-      <section id="how-we-use-information">
-        <h2><span>02</span> How We Use Your Information</h2>
-        <p>
+      <section class="mb-[3.25rem] scroll-mt-8" id="how-we-use-information">
+        <h2 class="mt-0 mb-4 flex items-baseline gap-[0.8rem] text-[clamp(1.3rem,2.5vw,1.7rem)] font-medium leading-[1.25] tracking-[-0.035em] text-[#122349]"><span class="text-[0.78rem] tabular-nums tracking-normal text-[#fc784c]">02</span> How We Use Your Information</h2>
+        <p class="m-0 mb-4">
           The information collected through Google Analytics and YouTube cookies is used
           for the following purposes:
         </p>
-        <ul>
+        <ul class="mt-[1.2rem] mb-0 grid gap-[0.85rem] py-0 pl-[1.2rem] [&_li]:pl-[0.35rem] [&_li]:marker:text-[#fc784c]">
           <li>
             <strong>Improving User Experience:</strong> We use the data to understand how
             users interact with our Website, allowing us to make improvements and enhance
@@ -109,14 +110,14 @@ const sections = [
         </ul>
       </section>
 
-      <section id="your-choices">
-        <h2><span>03</span> Your Choices</h2>
-        <p>
+      <section class="mb-[3.25rem] scroll-mt-8" id="your-choices">
+        <h2 class="mt-0 mb-4 flex items-baseline gap-[0.8rem] text-[clamp(1.3rem,2.5vw,1.7rem)] font-medium leading-[1.25] tracking-[-0.035em] text-[#122349]"><span class="text-[0.78rem] tabular-nums tracking-normal text-[#fc784c]">03</span> Your Choices</h2>
+        <p class="m-0 mb-4">
           By continuing to use our Website, you consent to our use of cookies and the
           collection of information as described in this Privacy Policy. If you do not
           agree with these practices, please stop using our Website.
         </p>
-        <p>
+        <p class="m-0 mb-4">
           You can also control and manage cookies through your browser settings. Most
           web browsers allow you to view, disable, or delete cookies on your device.
           Please note that disabling cookies may affect the functionality of certain
@@ -124,13 +125,13 @@ const sections = [
         </p>
       </section>
 
-      <section id="service-providers">
-        <h2><span>04</span> Third-Party Service Providers</h2>
-        <p>
+      <section class="mb-[3.25rem] scroll-mt-8" id="service-providers">
+        <h2 class="mt-0 mb-4 flex items-baseline gap-[0.8rem] text-[clamp(1.3rem,2.5vw,1.7rem)] font-medium leading-[1.25] tracking-[-0.035em] text-[#122349]"><span class="text-[0.78rem] tabular-nums tracking-normal text-[#fc784c]">04</span> Third-Party Service Providers</h2>
+        <p class="m-0 mb-4">
           We use third-party Service Providers to monitor and analyze the use of our
           Website.
         </p>
-        <ul>
+        <ul class="mt-[1.2rem] mb-0 grid gap-[0.85rem] py-0 pl-[1.2rem] [&_li]:pl-[0.35rem] [&_li]:marker:text-[#fc784c]">
           <li>
             <strong>Google Analytics:</strong> A web analytics service offered by Google
             that tracks and reports website traffic. For more information on the privacy
@@ -158,9 +159,9 @@ const sections = [
         </ul>
       </section>
 
-      <section id="third-party-links">
-        <h2><span>05</span> Third-Party Links</h2>
-        <p>
+      <section class="mb-[3.25rem] scroll-mt-8" id="third-party-links">
+        <h2 class="mt-0 mb-4 flex items-baseline gap-[0.8rem] text-[clamp(1.3rem,2.5vw,1.7rem)] font-medium leading-[1.25] tracking-[-0.035em] text-[#122349]"><span class="text-[0.78rem] tabular-nums tracking-normal text-[#fc784c]">05</span> Third-Party Links</h2>
+        <p class="m-0 mb-4">
           Our Website may contain links to third-party websites or services, including
           YouTube. Please be aware that we are not responsible for the privacy practices
           of these third parties. We encourage you to review the privacy policies of
@@ -169,9 +170,9 @@ const sections = [
         </p>
       </section>
 
-      <section id="policy-changes">
-        <h2><span>06</span> Changes to This Privacy Policy</h2>
-        <p>
+      <section class="mb-[3.25rem] scroll-mt-8" id="policy-changes">
+        <h2 class="mt-0 mb-4 flex items-baseline gap-[0.8rem] text-[clamp(1.3rem,2.5vw,1.7rem)] font-medium leading-[1.25] tracking-[-0.035em] text-[#122349]"><span class="text-[0.78rem] tabular-nums tracking-normal text-[#fc784c]">06</span> Changes to This Privacy Policy</h2>
+        <p class="m-0 mb-4">
           We may update this Privacy Policy from time to time to reflect changes in our
           practices or for other operational, legal, or regulatory reasons. Any changes
           will be effective immediately upon posting the updated Privacy Policy on our
@@ -180,20 +181,20 @@ const sections = [
         </p>
       </section>
 
-      <section id="contact-us" class="contact-card">
+      <section id="contact-us" class="mt-14 mb-6 flex items-center justify-between gap-8 rounded-[0.8rem] bg-[#122349] p-8 max-[480px]:items-stretch max-[480px]:flex-col max-[480px]:gap-5 max-[480px]:p-[1.4rem]">
         <div>
-          <span class="contact-label">We're here to help</span>
-          <h2><span>07</span> Contact Us</h2>
-          <p>
+          <span class="mb-3 block text-[0.76rem] font-medium uppercase tracking-[0.1em] text-[#b9ff66]">We're here to help</span>
+          <h2 class="mt-0 mb-[0.7rem] flex items-baseline gap-[0.8rem] text-[clamp(1.3rem,2.5vw,1.7rem)] font-medium leading-[1.25] tracking-[-0.035em] text-white"><span class="text-[0.78rem] tabular-nums tracking-normal text-[#b9ff66]">07</span> Contact Us</h2>
+          <p class="m-0 max-w-[390px] text-[0.93rem] leading-[1.8] text-[#d2d7e0]">
             If you have any questions or concerns about this Privacy Policy, please contact us.
           </p>
         </div>
-        <a class="contact-link" href="mailto:team@signlanguagetech.com">
+        <a class="inline-flex shrink-0 items-center gap-[0.8rem] rounded-[0.4rem] bg-[#b9ff66] px-4 py-[0.9rem] text-[0.88rem] font-medium text-[#122349] no-underline transition-transform duration-[160ms] hover:-translate-y-0.5 motion-reduce:transition-none max-[480px]:justify-between max-[480px]:[overflow-wrap:anywhere]" href="mailto:team@signlanguagetech.com">
           team@signlanguagetech.com <span aria-hidden="true">↗</span>
         </a>
       </section>
 
-      <p class="closing-note">
+      <p class="m-0 mt-8 text-[0.88rem] leading-[1.8] text-[#687284]">
         By using our Website, you acknowledge that you have read and understood this
         Privacy Policy and agree to its terms. If you do not agree, please discontinue
         your use of the Website immediately.
@@ -201,430 +202,3 @@ const sections = [
     </article>
   </div>
 </div>
-
-<style>
-  .policy-page {
-    --policy-ink: #122349;
-    --policy-muted: #687284;
-    --policy-coral: #fc784c;
-    --policy-green: #b9ff66;
-    color: var(--policy-ink);
-    background: #f7f7f4;
-    padding: 5.5rem max(1.25rem, calc((100vw - 1240px) / 2)) 7rem;
-  }
-
-  .policy-hero {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 3rem;
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 1rem 0 4.5rem;
-  }
-
-  .hero-copy {
-    max-width: 720px;
-  }
-
-  .breadcrumb {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-bottom: 3.75rem;
-    color: var(--policy-muted);
-    font-size: 0.9rem;
-    text-decoration: none;
-  }
-
-  .breadcrumb:hover {
-    color: var(--policy-ink);
-  }
-
-  .eyebrow,
-  .contents-label,
-  .contact-label {
-    margin: 0;
-    font-size: 0.76rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    color: var(--policy-muted);
-  }
-
-  .eyebrow span {
-    width: 0.55rem;
-    height: 0.55rem;
-    border-radius: 50%;
-    background: var(--policy-coral);
-  }
-
-  .policy-hero h1 {
-    margin: 1.2rem 0 1.25rem;
-    font-size: clamp(4rem, 9vw, 7.5rem);
-    font-weight: 500;
-    letter-spacing: -0.085em;
-    line-height: 0.9;
-  }
-
-  .policy-hero h1 span {
-    color: var(--policy-coral);
-  }
-
-  .hero-summary {
-    max-width: 460px;
-    margin: 0;
-    color: var(--policy-muted);
-    font-size: 1.15rem;
-    line-height: 1.65;
-  }
-
-  .policy-note {
-    display: flex;
-    flex: 0 0 220px;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    min-height: 205px;
-    padding: 1.35rem;
-    border-radius: 0.8rem;
-    background: var(--policy-green);
-  }
-
-  .note-icon {
-    align-self: flex-end;
-    font-size: 1.5rem;
-  }
-
-  .policy-note p {
-    margin: 0;
-    font-size: 1.35rem;
-    font-weight: 500;
-    line-height: 1.25;
-  }
-
-  .last-updated {
-    color: #364524;
-    font-size: 0.78rem;
-  }
-
-  .last-updated time {
-    display: block;
-    margin-top: 0.25rem;
-    font-weight: 500;
-  }
-
-  .policy-layout {
-    display: grid;
-    grid-template-columns: 235px minmax(0, 1fr);
-    align-items: start;
-    gap: clamp(2.5rem, 7vw, 7rem);
-    max-width: 1240px;
-    margin: 0 auto;
-    padding-top: 3.5rem;
-    border-top: 1px solid #dedfd9;
-  }
-
-  .contents {
-    position: sticky;
-    top: 2rem;
-    padding: 0.5rem 0;
-  }
-
-  .contents-label {
-    margin-bottom: 1.2rem;
-    color: var(--policy-muted);
-  }
-
-  .contents ol {
-    display: grid;
-    gap: 0.15rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .contents li a {
-    display: grid;
-    grid-template-columns: 1.7rem 1fr;
-    gap: 0.5rem;
-    padding: 0.55rem 0;
-    color: #586274;
-    font-size: 0.87rem;
-    line-height: 1.4;
-    text-decoration: none;
-    transition: color 160ms ease;
-  }
-
-  .contents li a span {
-    color: #9ba1aa;
-    font-size: 0.72rem;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .contents li a:hover,
-  .contents li a:focus-visible {
-    color: var(--policy-ink);
-  }
-
-  .contents-contact {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #dedfd9;
-    color: var(--policy-ink);
-    font-size: 0.83rem;
-    text-decoration: none;
-  }
-
-  .policy-content {
-    min-width: 0;
-    max-width: 780px;
-  }
-
-  .policy-content .intro {
-    display: grid;
-    grid-template-columns: 2rem 1fr;
-    gap: 1rem;
-    margin-bottom: 3.5rem;
-    padding: 1.4rem;
-    border-radius: 0.7rem;
-    background: #fff;
-  }
-
-  .intro-mark {
-    display: grid;
-    width: 2rem;
-    height: 2rem;
-    place-items: center;
-    border-radius: 50%;
-    background: var(--policy-green);
-    font-size: 0.95rem;
-    font-weight: 500;
-  }
-
-  .policy-content p,
-  .policy-content li {
-    color: #586274;
-    font-size: 1rem;
-    line-height: 1.8;
-  }
-
-  .policy-content p {
-    margin: 0 0 1rem;
-  }
-
-  .policy-content a:not(.contact-link) {
-    color: var(--policy-ink);
-    text-decoration-color: var(--policy-coral);
-    text-underline-offset: 0.2em;
-  }
-
-  .policy-content section {
-    scroll-margin-top: 2rem;
-    margin: 0 0 3.25rem;
-  }
-
-  .policy-content h2 {
-    display: flex;
-    align-items: baseline;
-    gap: 0.8rem;
-    margin: 0 0 1rem;
-    color: var(--policy-ink);
-    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
-    font-weight: 500;
-    letter-spacing: -0.035em;
-    line-height: 1.25;
-  }
-
-  .policy-content h2 > span {
-    color: var(--policy-coral);
-    font-size: 0.78rem;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0;
-  }
-
-  .policy-content ul {
-    display: grid;
-    gap: 0.85rem;
-    margin: 1.2rem 0 0;
-    padding: 0 0 0 1.2rem;
-  }
-
-  .policy-content li {
-    padding-left: 0.35rem;
-  }
-
-  .policy-content li::marker {
-    color: var(--policy-coral);
-  }
-
-  .policy-content strong {
-    color: var(--policy-ink);
-    font-weight: 500;
-  }
-
-  .policy-content .contact-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    margin: 3.5rem 0 1.5rem;
-    padding: 2rem;
-    border-radius: 0.8rem;
-    background: var(--policy-ink);
-  }
-
-  .contact-label {
-    display: block;
-    margin-bottom: 0.75rem;
-    color: var(--policy-green);
-  }
-
-  .policy-content .contact-card h2 {
-    margin-bottom: 0.7rem;
-    color: #fff;
-  }
-
-  .policy-content .contact-card h2 > span {
-    color: var(--policy-green);
-  }
-
-  .policy-content .contact-card p {
-    max-width: 390px;
-    margin: 0;
-    color: #d2d7e0;
-    font-size: 0.93rem;
-  }
-
-  .contact-link {
-    display: inline-flex;
-    flex: 0 0 auto;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 0.9rem 1rem;
-    border-radius: 0.4rem;
-    background: var(--policy-green);
-    color: var(--policy-ink);
-    font-size: 0.88rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: transform 160ms ease;
-  }
-
-  .contact-link:hover {
-    transform: translateY(-2px);
-  }
-
-  .policy-content .closing-note {
-    margin-top: 2rem;
-    color: var(--policy-muted);
-    font-size: 0.88rem;
-  }
-
-  .policy-page a:focus-visible {
-    outline: 2px solid var(--policy-coral);
-    outline-offset: 4px;
-  }
-
-  @media (max-width: 760px) {
-    .policy-page {
-      padding: 3.5rem 1.25rem 5rem;
-    }
-
-    .policy-hero {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 2rem;
-      padding-bottom: 3rem;
-    }
-
-    .breadcrumb {
-      margin-bottom: 2.75rem;
-    }
-
-    .policy-hero h1 {
-      font-size: clamp(4rem, 17vw, 6.5rem);
-    }
-
-    .policy-note {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      flex-basis: auto;
-      width: 100%;
-      min-height: 0;
-      gap: 0.9rem;
-    }
-
-    .note-icon {
-      grid-column: 2;
-      grid-row: 1 / span 2;
-    }
-
-    .last-updated {
-      grid-column: 1;
-    }
-
-    .policy-layout {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      padding-top: 2rem;
-    }
-
-    .contents {
-      position: static;
-      padding: 1.2rem;
-      border: 1px solid #dedfd9;
-      border-radius: 0.7rem;
-      background: #fff;
-    }
-
-    .contents ol {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 1rem;
-    }
-
-    .contents-contact {
-      margin-top: 0.75rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .contents ol {
-      grid-template-columns: 1fr;
-    }
-
-    .policy-content .intro {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-      padding: 1.2rem;
-    }
-
-    .policy-content .contact-card {
-      align-items: stretch;
-      flex-direction: column;
-      gap: 1.25rem;
-      padding: 1.4rem;
-    }
-
-    .contact-link {
-      justify-content: space-between;
-      overflow-wrap: anywhere;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .contents li a,
-    .contact-link {
-      transition: none;
-    }
-  }
-</style>

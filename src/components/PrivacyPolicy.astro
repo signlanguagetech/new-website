@@ -1,0 +1,630 @@
+---
+const sections = [
+  { id: "information-we-collect", title: "Information we collect" },
+  { id: "how-we-use-information", title: "How we use your information" },
+  { id: "your-choices", title: "Your choices" },
+  { id: "service-providers", title: "Third-party service providers" },
+  { id: "third-party-links", title: "Third-party links" },
+  { id: "policy-changes", title: "Changes to this policy" },
+  { id: "contact-us", title: "Contact us" },
+];
+---
+
+<div class="policy-page">
+  <header class="policy-hero">
+    <div class="hero-copy">
+      <a class="breadcrumb" href="/" aria-label="Back to Sign Language Tech home">
+        <span aria-hidden="true">←</span> Sign Language Tech
+      </a>
+      <p class="eyebrow"><span></span> Your privacy matters</p>
+      <h1>Privacy<br /><span>Policy</span></h1>
+      <p class="hero-summary">
+        A straightforward guide to the information we collect, how we use it,
+        and the choices available to you.
+      </p>
+    </div>
+    <aside class="policy-note" aria-label="Policy summary">
+      <span class="note-icon" aria-hidden="true">↗</span>
+      <p>Clear information.<br />No surprises.</p>
+      <span class="last-updated">Last updated <time datetime="2024-08-19">19 Aug 2024</time></span>
+    </aside>
+  </header>
+
+  <div class="policy-layout">
+    <nav class="contents" aria-label="On this page">
+      <p class="contents-label">On this page</p>
+      <ol>
+        {
+          sections.map((section, index) => (
+            <li>
+              <a href={`#${section.id}`}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {section.title}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+      <a class="contents-contact" href="mailto:team@signlanguagetech.com">
+        Have a question? <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <article class="policy-content">
+      <div class="intro">
+        <span class="intro-mark" aria-hidden="true">i</span>
+        <p>
+          This Privacy Policy outlines how Sign Language Tech ("we", "our", or "us")
+          collects, uses, and protects your information when you visit and interact
+          with our website <a href="https://signlanguagetech.com">signlanguagetech.com</a>
+          ("Website"). By using the Website, you agree to the terms of this Privacy
+          Policy. If you do not agree with these terms, please discontinue use of
+          the Website immediately.
+        </p>
+      </div>
+
+      <section id="information-we-collect">
+        <h2><span>01</span> Information We Collect</h2>
+        <p>
+          When you use our Website, we may collect certain information automatically
+          through the use of cookies and similar technologies. This includes:
+        </p>
+        <ul>
+          <li>
+            <strong>Google Analytics:</strong> We use Google Analytics to track and analyze
+            how visitors use our Website. Google Analytics may collect information about
+            your browser type, operating system, pages visited, time spent on pages, and
+            other similar information. This data is used to improve the functionality and
+            user experience of our Website.
+          </li>
+          <li>
+            <strong>YouTube Cookies:</strong> Our Website may embed YouTube videos. When
+            you interact with these videos, YouTube may place cookies on your device. These
+            cookies may collect information about your interaction with the video content,
+            such as viewing history and preferences.
+          </li>
+        </ul>
+      </section>
+
+      <section id="how-we-use-information">
+        <h2><span>02</span> How We Use Your Information</h2>
+        <p>
+          The information collected through Google Analytics and YouTube cookies is used
+          for the following purposes:
+        </p>
+        <ul>
+          <li>
+            <strong>Improving User Experience:</strong> We use the data to understand how
+            users interact with our Website, allowing us to make improvements and enhance
+            user experience.
+          </li>
+          <li>
+            <strong>Analyzing Trends:</strong> The information helps us analyze trends in
+            Website traffic and usage patterns.
+          </li>
+          <li>
+            <strong>Enhancing Content Delivery:</strong> YouTube cookies help us deliver
+            relevant video content and improve your interaction with embedded videos.
+          </li>
+        </ul>
+      </section>
+
+      <section id="your-choices">
+        <h2><span>03</span> Your Choices</h2>
+        <p>
+          By continuing to use our Website, you consent to our use of cookies and the
+          collection of information as described in this Privacy Policy. If you do not
+          agree with these practices, please stop using our Website.
+        </p>
+        <p>
+          You can also control and manage cookies through your browser settings. Most
+          web browsers allow you to view, disable, or delete cookies on your device.
+          Please note that disabling cookies may affect the functionality of certain
+          features on our Website.
+        </p>
+      </section>
+
+      <section id="service-providers">
+        <h2><span>04</span> Third-Party Service Providers</h2>
+        <p>
+          We use third-party Service Providers to monitor and analyze the use of our
+          Website.
+        </p>
+        <ul>
+          <li>
+            <strong>Google Analytics:</strong> A web analytics service offered by Google
+            that tracks and reports website traffic. For more information on the privacy
+            practices of Google, please visit
+            <a
+              href="https://policies.google.com/privacy?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Google Privacy &amp; Terms</a>.
+          </li>
+          <li>
+            <strong>YouTube:</strong> Our Website may embed videos from YouTube, a video
+            streaming service provided by Google. When you watch or interact with these embedded
+            videos, YouTube may place cookies on your device and collect data regarding your
+            interaction with the content. This information may include your viewing history,
+            preferences, and other usage statistics, which are used to improve the delivery
+            of video content and provide a personalized user experience. You can learn more
+            about how YouTube handles your data by visiting their
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Privacy Policy</a>.
+          </li>
+        </ul>
+      </section>
+
+      <section id="third-party-links">
+        <h2><span>05</span> Third-Party Links</h2>
+        <p>
+          Our Website may contain links to third-party websites or services, including
+          YouTube. Please be aware that we are not responsible for the privacy practices
+          of these third parties. We encourage you to review the privacy policies of
+          these third-party websites or services before providing any personal
+          information or using their services.
+        </p>
+      </section>
+
+      <section id="policy-changes">
+        <h2><span>06</span> Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect changes in our
+          practices or for other operational, legal, or regulatory reasons. Any changes
+          will be effective immediately upon posting the updated Privacy Policy on our
+          Website. We encourage you to review this Privacy Policy periodically to stay
+          informed about how we are protecting your information.
+        </p>
+      </section>
+
+      <section id="contact-us" class="contact-card">
+        <div>
+          <span class="contact-label">We're here to help</span>
+          <h2><span>07</span> Contact Us</h2>
+          <p>
+            If you have any questions or concerns about this Privacy Policy, please contact us.
+          </p>
+        </div>
+        <a class="contact-link" href="mailto:team@signlanguagetech.com">
+          team@signlanguagetech.com <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <p class="closing-note">
+        By using our Website, you acknowledge that you have read and understood this
+        Privacy Policy and agree to its terms. If you do not agree, please discontinue
+        your use of the Website immediately.
+      </p>
+    </article>
+  </div>
+</div>
+
+<style>
+  .policy-page {
+    --policy-ink: #122349;
+    --policy-muted: #687284;
+    --policy-coral: #fc784c;
+    --policy-green: #b9ff66;
+    color: var(--policy-ink);
+    background: #f7f7f4;
+    padding: 5.5rem max(1.25rem, calc((100vw - 1240px) / 2)) 7rem;
+  }
+
+  .policy-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 1rem 0 4.5rem;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+  }
+
+  .breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 3.75rem;
+    color: var(--policy-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .breadcrumb:hover {
+    color: var(--policy-ink);
+  }
+
+  .eyebrow,
+  .contents-label,
+  .contact-label {
+    margin: 0;
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--policy-muted);
+  }
+
+  .eyebrow span {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--policy-coral);
+  }
+
+  .policy-hero h1 {
+    margin: 1.2rem 0 1.25rem;
+    font-size: clamp(4rem, 9vw, 7.5rem);
+    font-weight: 500;
+    letter-spacing: -0.085em;
+    line-height: 0.9;
+  }
+
+  .policy-hero h1 span {
+    color: var(--policy-coral);
+  }
+
+  .hero-summary {
+    max-width: 460px;
+    margin: 0;
+    color: var(--policy-muted);
+    font-size: 1.15rem;
+    line-height: 1.65;
+  }
+
+  .policy-note {
+    display: flex;
+    flex: 0 0 220px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 205px;
+    padding: 1.35rem;
+    border-radius: 0.8rem;
+    background: var(--policy-green);
+  }
+
+  .note-icon {
+    align-self: flex-end;
+    font-size: 1.5rem;
+  }
+
+  .policy-note p {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  .last-updated {
+    color: #364524;
+    font-size: 0.78rem;
+  }
+
+  .last-updated time {
+    display: block;
+    margin-top: 0.25rem;
+    font-weight: 500;
+  }
+
+  .policy-layout {
+    display: grid;
+    grid-template-columns: 235px minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(2.5rem, 7vw, 7rem);
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-top: 3.5rem;
+    border-top: 1px solid #dedfd9;
+  }
+
+  .contents {
+    position: sticky;
+    top: 2rem;
+    padding: 0.5rem 0;
+  }
+
+  .contents-label {
+    margin-bottom: 1.2rem;
+    color: var(--policy-muted);
+  }
+
+  .contents ol {
+    display: grid;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .contents li a {
+    display: grid;
+    grid-template-columns: 1.7rem 1fr;
+    gap: 0.5rem;
+    padding: 0.55rem 0;
+    color: #586274;
+    font-size: 0.87rem;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: color 160ms ease;
+  }
+
+  .contents li a span {
+    color: #9ba1aa;
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .contents li a:hover,
+  .contents li a:focus-visible {
+    color: var(--policy-ink);
+  }
+
+  .contents-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #dedfd9;
+    color: var(--policy-ink);
+    font-size: 0.83rem;
+    text-decoration: none;
+  }
+
+  .policy-content {
+    min-width: 0;
+    max-width: 780px;
+  }
+
+  .policy-content .intro {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+    padding: 1.4rem;
+    border-radius: 0.7rem;
+    background: #fff;
+  }
+
+  .intro-mark {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--policy-green);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .policy-content p,
+  .policy-content li {
+    color: #586274;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .policy-content p {
+    margin: 0 0 1rem;
+  }
+
+  .policy-content a:not(.contact-link) {
+    color: var(--policy-ink);
+    text-decoration-color: var(--policy-coral);
+    text-underline-offset: 0.2em;
+  }
+
+  .policy-content section {
+    scroll-margin-top: 2rem;
+    margin: 0 0 3.25rem;
+  }
+
+  .policy-content h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin: 0 0 1rem;
+    color: var(--policy-ink);
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.25;
+  }
+
+  .policy-content h2 > span {
+    color: var(--policy-coral);
+    font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+  }
+
+  .policy-content ul {
+    display: grid;
+    gap: 0.85rem;
+    margin: 1.2rem 0 0;
+    padding: 0 0 0 1.2rem;
+  }
+
+  .policy-content li {
+    padding-left: 0.35rem;
+  }
+
+  .policy-content li::marker {
+    color: var(--policy-coral);
+  }
+
+  .policy-content strong {
+    color: var(--policy-ink);
+    font-weight: 500;
+  }
+
+  .policy-content .contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 3.5rem 0 1.5rem;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    background: var(--policy-ink);
+  }
+
+  .contact-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--policy-green);
+  }
+
+  .policy-content .contact-card h2 {
+    margin-bottom: 0.7rem;
+    color: #fff;
+  }
+
+  .policy-content .contact-card h2 > span {
+    color: var(--policy-green);
+  }
+
+  .policy-content .contact-card p {
+    max-width: 390px;
+    margin: 0;
+    color: #d2d7e0;
+    font-size: 0.93rem;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 1rem;
+    border-radius: 0.4rem;
+    background: var(--policy-green);
+    color: var(--policy-ink);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 160ms ease;
+  }
+
+  .contact-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .policy-content .closing-note {
+    margin-top: 2rem;
+    color: var(--policy-muted);
+    font-size: 0.88rem;
+  }
+
+  .policy-page a:focus-visible {
+    outline: 2px solid var(--policy-coral);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 760px) {
+    .policy-page {
+      padding: 3.5rem 1.25rem 5rem;
+    }
+
+    .policy-hero {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 2rem;
+      padding-bottom: 3rem;
+    }
+
+    .breadcrumb {
+      margin-bottom: 2.75rem;
+    }
+
+    .policy-hero h1 {
+      font-size: clamp(4rem, 17vw, 6.5rem);
+    }
+
+    .policy-note {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      flex-basis: auto;
+      width: 100%;
+      min-height: 0;
+      gap: 0.9rem;
+    }
+
+    .note-icon {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
+
+    .last-updated {
+      grid-column: 1;
+    }
+
+    .policy-layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding-top: 2rem;
+    }
+
+    .contents {
+      position: static;
+      padding: 1.2rem;
+      border: 1px solid #dedfd9;
+      border-radius: 0.7rem;
+      background: #fff;
+    }
+
+    .contents ol {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 1rem;
+    }
+
+    .contents-contact {
+      margin-top: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contents ol {
+      grid-template-columns: 1fr;
+    }
+
+    .policy-content .intro {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      padding: 1.2rem;
+    }
+
+    .policy-content .contact-card {
+      align-items: stretch;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: 1.4rem;
+    }
+
+    .contact-link {
+      justify-content: space-between;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contents li a,
+    .contact-link {
+      transition: none;
+    }
+  }
+</style>

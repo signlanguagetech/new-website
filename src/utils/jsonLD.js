@@ -1,35 +1,41 @@
 import siteData from "../data/siteData.json";
-import { slugify } from "./slugify";
 
-export default function jsonLDGenerator({ type, post, url }) {
-  // If the page has CMS data, use it.
-  if (type === "post") {
-    return `<script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "${url}"
-        },
-        "headline": "${post.title}",
-        "description": "${post.description}",
-        "image": "${post.image.src}",
-        "author": {
-          "@type": "Person",
-          "name": "${post.author}",
-          "url": "/author/${slugify(post.author)}"
-        },
-        "datePublished": "${post.date}"
-      }
-    </script>`;
-  }
-  return `<script type="application/ld+json">
-      {
-      "@context": "https://schema.org/",
-      "@type": "WebSite",
-      "name": "${siteData.title}",
-      "url": "${import.meta.env.SITE}"
-      }
-    </script>`;
+/**
+ * @param {{
+ *   type: "post",
+ *   post: { title: string, description: string, image: string, author: string, date: string },
+ *   url: string
+ * } | {
+ *   type: "website",
+ *   url: string
+ * }} params
+ */
+export default function jsonLDGenerator(params) {
+  const schema =
+    params.type === "post"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": params.url,
+          },
+          headline: params.post.title,
+          description: params.post.description,
+          image: params.post.image,
+          author: {
+            "@type": params.post.author === siteData.title ? "Organization" : "Person",
+            name: params.post.author,
+          },
+          datePublished: params.post.date,
+        }
+      : {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteData.title,
+          description: siteData.description,
+          url: import.meta.env.SITE,
+        };
+
+  return `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`;
 }

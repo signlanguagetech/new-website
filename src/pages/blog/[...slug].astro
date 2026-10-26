@@ -18,9 +18,21 @@ const { Content } = await post.render();
 const image = post.data.image.startsWith("https://")
   ? post.data.image
   : `/blog/${post.data.image}`;
+const imageUrl = new URL(image, import.meta.env.SITE).toString();
 ---
 
-<MainLayout title={post ? `${post.data.title} - Sign Language Tech Blog` : "Post not found - Sign Language Tech Blog"}>
+<MainLayout
+  title={`${post.data.title} | Sign Language Tech`}
+  description={post.data.summary}
+  image={{ src: imageUrl, alt: post.data.title }}
+  frontmatter={{
+    title: post.data.title,
+    description: post.data.summary,
+    image: imageUrl,
+    author: post.data.author,
+    date: post.data.pubDate.toISOString(),
+  }}
+>
   <main class="mb-40 pt-24">
     {post && Content ? (
       <article class="mx-auto max-w-screen-xl px-4 py-8 lg:px-3 lg:py-16">
@@ -51,7 +63,7 @@ const image = post.data.image.startsWith("https://")
         <p class="mb-4 text-lg">
           By {post.data.author} on {formatDate(post.data.pubDate)}
         </p>
-        <Tags tags={post.data.tags} />
+        <Tags href="blog" tags={post.data.tags} />
         <img
           src={image}
           alt={post.data.title}

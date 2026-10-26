@@ -1,21 +1,23 @@
 ---
-import { getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Tags from "../../components/ui/Tags.astro";
 import { formatDate } from "../../utils";
 
-const { slug } = Astro.params;
-const post = slug ? await getEntry("blog", slug) : undefined;
-const Content = post ? (await post.render()).Content : undefined;
-const image = post
-  ? post.data.image.startsWith("https://")
-    ? post.data.image
-    : `/blog/${post.data.image}`
-  : undefined;
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
 
-if (!post) {
-  Astro.response.status = 404;
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const image = post.data.image.startsWith("https://")
+  ? post.data.image
+  : `/blog/${post.data.image}`;
 ---
 
 <MainLayout title={post ? `${post.data.title} - Sign Language Tech Blog` : "Post not found - Sign Language Tech Blog"}>

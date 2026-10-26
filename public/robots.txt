@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://signlanguagetech.com/sitemap-index.xml

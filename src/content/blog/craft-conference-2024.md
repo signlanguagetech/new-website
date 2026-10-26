@@ -4,6 +4,7 @@ pubDate: 2024-07-10
 author: "Milad Vafaeifard"
 authImage: "/blog/slt-milad-profile-light.webp"
 image: "craft-conference-insights-and-accessibility.webp"
+imageAlt: "A Craft Conference attendee smiling and gesturing at the event."
 tags: 
   - Conference
 summary: "Reflections from Craft Conference on software, community, and accessibility, including practical steps the organizers took to make the event more inclusive."

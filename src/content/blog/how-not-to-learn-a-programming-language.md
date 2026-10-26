@@ -4,6 +4,7 @@ pubDate: 2024-08-19
 author: "Milad Vafaeifard"
 authImage: "/blog/slt-milad-profile-light.webp"
 image: "https://img.youtube.com/vi/_2zci_1zZls/hqdefault.jpg"
+imageAlt: "Video thumbnail for How Not to Learn a Programming Language."
 tags: 
   - tips
   - learning goal

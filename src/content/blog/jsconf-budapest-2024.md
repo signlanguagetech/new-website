@@ -4,6 +4,7 @@ pubDate: 2024-08-05
 author: "Milad Vafaeifard"
 authImage: "/blog/slt-milad-profile-light.webp"
 image: "lighting-talk-effect.webp"
+imageAlt: "A speaker presenting Effect code beside a JavaScript conference banner."
 tags:
   - Conference
 summary: "Highlights from JsConf Budapest 2024, where two short talks explored TypeScript at scale and real-life accessibility, with interpreters supporting inclusion."

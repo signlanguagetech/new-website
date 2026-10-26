@@ -24,7 +24,7 @@ const imageUrl = new URL(image, import.meta.env.SITE).toString();
 <MainLayout
   title={`${post.data.title} | Sign Language Tech`}
   description={post.data.summary}
-  image={{ src: imageUrl, alt: post.data.title }}
+  image={{ src: imageUrl, alt: post.data.imageAlt }}
   frontmatter={{
     title: post.data.title,
     description: post.data.summary,
@@ -66,7 +66,7 @@ const imageUrl = new URL(image, import.meta.env.SITE).toString();
         <Tags href="blog" tags={post.data.tags} />
         <img
           src={image}
-          alt={post.data.title}
+          alt={post.data.imageAlt}
           class="my-6 h-auto w-full rounded-xl"
         />
         <div class="content">

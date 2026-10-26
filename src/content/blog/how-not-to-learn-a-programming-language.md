@@ -12,16 +12,6 @@ summary: "Common mistakes that can get in the way of learning a programming lang
 type: "Tutorial"
 ---
 
-<iframe 
-  class="youtube-frame"
-  src="https://www.youtube.com/embed/_2zci_1zZls"
-  title="YouTube video player" 
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen>
-</iframe>
-
 ## 1. If it is boring, it is hard to learn
 Trying to learn a programming language that doesn't interest you or seems tedious can make it difficult to stay motivated. To make learning more enjoyable, choose a language that aligns with your goals and projects you are passionate about. Engage with interactive tutorials, join coding communities, and work on fun projects to maintain your enthusiasm.
 
@@ -41,5 +31,15 @@ Investing in expensive courses or resources isn't necessary to learn a programmi
 Balancing your learning process is crucial. Allocate time for focused practice, but also make sure to include breaks and leisure activities to prevent burnout. Getting enough sleep is important for memory retention and cognitive function, so don't sacrifice rest for extra study time.
 
 In conclusion, learning a programming language should be a challenging yet enjoyable experience. By avoiding common pitfalls such as boredom, memorization overload, and fear of mistakes, you can make steady progress. Remember to balance your time, effort, and rest to maintain a healthy learning pace. With persistence and the right approach, you'll become proficient in the programming language of your choice.
+
+<iframe 
+  class="youtube-frame"
+  src="https://www.youtube.com/embed/_2zci_1zZls"
+  title="YouTube video player" 
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
 
 Happy coding-sign! 🤟

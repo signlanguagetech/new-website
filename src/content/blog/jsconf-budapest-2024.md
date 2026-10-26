@@ -11,6 +11,10 @@ summary: "Highlights from JsConf Budapest 2024, where two short talks explored T
 type: "Article"
 ---
 
+On the summer in Budapest, the historic and beautiful Urania National Film Theatre transformed into a lively center for tech lovers for <a href="https://jsconfbp.com" target="_blank">JsConf Budapest</a> on June 27-28, 2024. I was all set to share my thoughts through my two lighting talks: “Navigating towards Production-Grade TypeScript at Scale: How Effect Helps You Reach Your Goals Without Drowning in Complexity” and “Inaccessible 'Accessibility:' Real-life Stories.” checkout <a href="https://jsconfbp.com/schedule" target="_blank">the schedule</a>.
+
+On the first day (June 27), Kicking off with my first talk, I dove into TypeScript and discussed how the 'Effect' can simplify complex coding challenges. The room was full with developers and tech enthusiasts who seemed engaged and interested, were reflecting on the points raised. 
+
 <iframe 
   class="youtube-frame"
   src="https://www.youtube.com/embed/LMnR3x8YMog?si=cCccIVyeO7C-inmd"
@@ -21,11 +25,6 @@ type: "Article"
   allowfullscreen>
 </iframe>
 
-On the summer in Budapest, the historic and beautiful Urania National Film Theatre transformed into a lively center for tech lovers for <a href="https://jsconfbp.com" target="_blank">JsConf Budapest</a> on June 27-28, 2024. I was all set to share my thoughts through my two lighting talks: “Navigating towards Production-Grade TypeScript at Scale: How Effect Helps You Reach Your Goals Without Drowning in Complexity” and “Inaccessible 'Accessibility:' Real-life Stories.” checkout <a href="https://jsconfbp.com/schedule" target="_blank">the schedule</a>.
-
-On the first day (June 27), Kicking off with my first talk, I dove into TypeScript and discussed how the 'Effect' can simplify complex coding challenges. The room was full with developers and tech enthusiasts who seemed engaged and interested, were reflecting on the points raised. 
-
-![Milad standing next to a screen and pointing to a slide](/blog/lighting-talk-effect.webp)
 
 I was standing next to the big TV that showcased my slides, I looked out their faces were great gathering in the audience. The interpreters were also there besides me, and prepared to make the event inclusive and accessible. My aim was simple: to enlighten and hopefully inspire all of us.
 

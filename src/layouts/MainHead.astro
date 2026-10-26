@@ -3,6 +3,7 @@ import Seo from "../components/seo/Seo.astro";
 
 // Pass the contents to create SEO for the page
 const { title, description, image, frontmatter, robots } = Astro.props;
+const GOOGLE_TAG_ID = "G-MX94SJZ1E8";
 ---
 
 <head>
@@ -26,6 +27,19 @@ const { title, description, image, frontmatter, robots } = Astro.props;
     {frontmatter}
     {robots}
   />
+
+  <script
+    async
+    src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}
+  ></script>
+  <script is:inline define:vars={{ googleTagId: GOOGLE_TAG_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", googleTagId);
+  </script>
 
   <!-- Preconnect fonts, images... -->
 </head>
